@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ZephyrApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>93F8F3A91DD3DE1F00529892</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93F8F3BD1DD3DE2000529892</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93F8F3C81DD3DE2000529892</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
