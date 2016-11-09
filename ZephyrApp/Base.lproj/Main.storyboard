@@ -304,6 +304,9 @@
                                 <rect key="frame" x="36" y="266" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="OvS-oj-WtT" kind="custom" id="73L-W3-Xk2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaI-j8-azz">
                                 <rect key="frame" x="143" y="266" width="154" height="30"/>
@@ -405,4 +408,7 @@
             <point key="canvasLocation" x="791" y="-1025"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="73L-W3-Xk2"/>
+    </inferredMetricsTieBreakers>
 </document>
