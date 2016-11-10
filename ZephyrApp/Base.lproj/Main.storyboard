@@ -304,9 +304,6 @@
                                 <rect key="frame" x="36" y="266" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="OvS-oj-WtT" kind="custom" id="73L-W3-Xk2"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaI-j8-azz">
                                 <rect key="frame" x="143" y="266" width="154" height="30"/>
@@ -322,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxl-Nz-EFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="118" y="152"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="41m-zU-J1H">
@@ -340,7 +337,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJB-bZ-tSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="124"/>
+            <point key="canvasLocation" x="882" y="152"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="jDp-vn-ZyH">
@@ -408,7 +405,4 @@
             <point key="canvasLocation" x="791" y="-1025"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="73L-W3-Xk2"/>
-    </inferredMetricsTieBreakers>
 </document>
