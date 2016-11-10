@@ -14,6 +14,10 @@
 		93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B61DD3DE2000529892 /* LaunchScreen.storyboard */; };
 		93F8F3C31DD3DE2000529892 /* ZephyrAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3C21DD3DE2000529892 /* ZephyrAppTests.swift */; };
 		93F8F3CE1DD3DE2000529892 /* ZephyrAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3CD1DD3DE2000529892 /* ZephyrAppUITests.swift */; };
+		93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */; };
+		93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DD1DD4DD2100529892 /* treehouse-25.png */; };
+		93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DF1DD4DDC400529892 /* briefcase-25.png */; };
+		93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		93F8F3C91DD3DE2000529892 /* ZephyrAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZephyrAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3CD1DD3DE2000529892 /* ZephyrAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZephyrAppUITests.swift; sourceTree = "<group>"; };
 		93F8F3CF1DD3DE2000529892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treehouse_filled-25.png"; sourceTree = SOURCE_ROOT; };
+		93F8F3DD1DD4DD2100529892 /* treehouse-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treehouse-25.png"; sourceTree = SOURCE_ROOT; };
+		93F8F3DF1DD4DDC400529892 /* briefcase-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase-25.png"; sourceTree = SOURCE_ROOT; };
+		93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase_filled-25.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,10 @@
 		93F8F3AC1DD3DE1F00529892 /* ZephyrApp */ = {
 			isa = PBXGroup;
 			children = (
+				93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */,
+				93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */,
+				93F8F3DD1DD4DD2100529892 /* treehouse-25.png */,
+				93F8F3DF1DD4DDC400529892 /* briefcase-25.png */,
 				93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */,
 				93F8F3AF1DD3DE2000529892 /* ViewController.swift */,
 				93F8F3B11DD3DE2000529892 /* Main.storyboard */,
@@ -232,9 +244,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */,
 				93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */,
+				93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */,
+				93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */,
 				93F8F3B51DD3DE2000529892 /* Assets.xcassets in Resources */,
 				93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */,
+				93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +519,7 @@
 				93F8F3D41DD3DE2000529892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93F8F3D51DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrAppTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +528,7 @@
 				93F8F3D71DD3DE2000529892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93F8F3D81DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +537,7 @@
 				93F8F3DA1DD3DE2000529892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

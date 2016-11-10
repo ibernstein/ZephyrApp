@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="beg-BB-D8z"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="beg-BB-D8z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVE-zd-tU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +182,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="bM8-IS-25u"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="bM8-IS-25u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgx-dl-meE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="AqA-zu-ccJ"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="AqA-zu-ccJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkb-E5-31d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +247,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="DDr-Dg-uca"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="DDr-Dg-uca"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlb-o6-Gnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -352,7 +352,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FhK-tZ-LtE"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="FhK-tZ-LtE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArL-oN-CVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,7 +380,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Ias-rC-D68"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="Ias-rC-D68"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRc-y0-2FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -405,4 +405,10 @@
             <point key="canvasLocation" x="791" y="-1025"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="briefcase-25.png" width="25" height="25"/>
+        <image name="briefcase_filled-25.png" width="25" height="25"/>
+        <image name="treehouse-25.png" width="25" height="25"/>
+        <image name="treehouse_filled-25.png" width="25" height="25"/>
+    </resources>
 </document>
