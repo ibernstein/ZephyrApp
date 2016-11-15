@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2FE77F2C669D887FA88A52 /* Pods_ZephyrApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619EA598E9E82877287EB930 /* Pods_ZephyrApp.framework */; };
 		93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */; };
 		93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AF1DD3DE2000529892 /* ViewController.swift */; };
 		93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B11DD3DE2000529892 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DD1DD4DD2100529892 /* treehouse-25.png */; };
 		93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DF1DD4DDC400529892 /* briefcase-25.png */; };
 		93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */; };
+		EA2255631DDB95B50054A896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2255621DDB95B50054A896 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		242A3A9812ACC578537C21EA /* Pods-ZephyrApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZephyrApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp.debug.xcconfig"; sourceTree = "<group>"; };
+		619EA598E9E82877287EB930 /* Pods_ZephyrApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZephyrApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3AA1DD3DE1F00529892 /* ZephyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZephyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F8F3AF1DD3DE2000529892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,9 @@
 		93F8F3DD1DD4DD2100529892 /* treehouse-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treehouse-25.png"; sourceTree = SOURCE_ROOT; };
 		93F8F3DF1DD4DDC400529892 /* briefcase-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase-25.png"; sourceTree = SOURCE_ROOT; };
 		93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase_filled-25.png"; sourceTree = SOURCE_ROOT; };
+		D0A794FEB3171558D94A44E8 /* Pods-ZephyrApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZephyrApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp.release.xcconfig"; sourceTree = "<group>"; };
+		EA2255621DDB95B50054A896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA2255641DDB9B4A0054A896 /* ZephyrApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZephyrApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2FE77F2C669D887FA88A52 /* Pods_ZephyrApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EB10827353939A8D5C57A02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				619EA598E9E82877287EB930 /* Pods_ZephyrApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66653DF7FE9393CB13A6235F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				242A3A9812ACC578537C21EA /* Pods-ZephyrApp.debug.xcconfig */,
+				D0A794FEB3171558D94A44E8 /* Pods-ZephyrApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		93F8F3A11DD3DE1F00529892 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +114,8 @@
 				93F8F3C11DD3DE2000529892 /* ZephyrAppTests */,
 				93F8F3CC1DD3DE2000529892 /* ZephyrAppUITests */,
 				93F8F3AB1DD3DE1F00529892 /* Products */,
+				66653DF7FE9393CB13A6235F /* Pods */,
+				4EB10827353939A8D5C57A02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +132,7 @@
 		93F8F3AC1DD3DE1F00529892 /* ZephyrApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA2255641DDB9B4A0054A896 /* ZephyrApp.entitlements */,
 				93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */,
 				93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */,
 				93F8F3DD1DD4DD2100529892 /* treehouse-25.png */,
@@ -115,6 +143,7 @@
 				93F8F3B41DD3DE2000529892 /* Assets.xcassets */,
 				93F8F3B61DD3DE2000529892 /* LaunchScreen.storyboard */,
 				93F8F3B91DD3DE2000529892 /* Info.plist */,
+				EA2255621DDB95B50054A896 /* GoogleService-Info.plist */,
 			);
 			path = ZephyrApp;
 			sourceTree = "<group>";
@@ -144,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F8F3D21DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrApp" */;
 			buildPhases = (
+				3EC7FCA200BF967865D2E627 /* [CP] Check Pods Manifest.lock */,
 				93F8F3A61DD3DE1F00529892 /* Sources */,
 				93F8F3A71DD3DE1F00529892 /* Frameworks */,
 				93F8F3A81DD3DE1F00529892 /* Resources */,
+				6F64FA1D534FBB959F5ABE35 /* [CP] Embed Pods Frameworks */,
+				5AA96F50C7D36F835B38FFA2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,7 +237,13 @@
 				TargetAttributes = {
 					93F8F3A91DD3DE1F00529892 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 522HWE3T54;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					93F8F3BD1DD3DE2000529892 = {
 						CreatedOnToolsVersion = 8.1;
@@ -245,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */,
+				EA2255631DDB95B50054A896 /* GoogleService-Info.plist in Resources */,
 				93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */,
 				93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */,
 				93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */,
@@ -269,6 +308,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EC7FCA200BF967865D2E627 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5AA96F50C7D36F835B38FFA2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F64FA1D534FBB959F5ABE35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93F8F3A61DD3DE1F00529892 /* Sources */ = {
@@ -424,8 +511,12 @@
 		};
 		93F8F3D31DD3DE2000529892 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 242A3A9812ACC578537C21EA /* Pods-ZephyrApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 522HWE3T54;
 				INFOPLIST_FILE = ZephyrApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
@@ -436,8 +527,13 @@
 		};
 		93F8F3D41DD3DE2000529892 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A794FEB3171558D94A44E8 /* Pods-ZephyrApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 522HWE3T54;
 				INFOPLIST_FILE = ZephyrApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
