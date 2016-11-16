@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D2FE77F2C669D887FA88A52 /* Pods_ZephyrApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619EA598E9E82877287EB930 /* Pods_ZephyrApp.framework */; };
+		93C754491DDCDBB500BB094D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C754481DDCDBB500BB094D /* Bolts.framework */; };
+		93C7544B1DDCDBC900BB094D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C7544A1DDCDBC900BB094D /* FBSDKCoreKit.framework */; };
+		93C7544D1DDCDBD500BB094D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C7544C1DDCDBD500BB094D /* FBSDKLoginKit.framework */; };
+		93C7544F1DDCDBDF00BB094D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C7544E1DDCDBDF00BB094D /* FBSDKShareKit.framework */; };
 		93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */; };
 		93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AF1DD3DE2000529892 /* ViewController.swift */; };
 		93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B11DD3DE2000529892 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		242A3A9812ACC578537C21EA /* Pods-ZephyrApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZephyrApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp.debug.xcconfig"; sourceTree = "<group>"; };
 		619EA598E9E82877287EB930 /* Pods_ZephyrApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZephyrApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C754481DDCDBB500BB094D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		93C7544A1DDCDBC900BB094D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		93C7544C1DDCDBD500BB094D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		93C7544E1DDCDBDF00BB094D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		93F8F3AA1DD3DE1F00529892 /* ZephyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZephyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F8F3AF1DD3DE2000529892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +78,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D2FE77F2C669D887FA88A52 /* Pods_ZephyrApp.framework in Frameworks */,
+				93C7544B1DDCDBC900BB094D /* FBSDKCoreKit.framework in Frameworks */,
+				93C7544F1DDCDBDF00BB094D /* FBSDKShareKit.framework in Frameworks */,
+				93C7544D1DDCDBD500BB094D /* FBSDKLoginKit.framework in Frameworks */,
+				93C754491DDCDBB500BB094D /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +105,10 @@
 		4EB10827353939A8D5C57A02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93C7544E1DDCDBDF00BB094D /* FBSDKShareKit.framework */,
+				93C7544C1DDCDBD500BB094D /* FBSDKLoginKit.framework */,
+				93C7544A1DDCDBC900BB094D /* FBSDKCoreKit.framework */,
+				93C754481DDCDBB500BB094D /* Bolts.framework */,
 				619EA598E9E82877287EB930 /* Pods_ZephyrApp.framework */,
 			);
 			name = Frameworks;
@@ -237,7 +253,6 @@
 				TargetAttributes = {
 					93F8F3A91DD3DE1F00529892 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 522HWE3T54;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -516,7 +531,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 522HWE3T54;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZephyrApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
@@ -533,7 +552,11 @@
 				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 522HWE3T54;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZephyrApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
