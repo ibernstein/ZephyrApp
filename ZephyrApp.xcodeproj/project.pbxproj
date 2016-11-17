@@ -12,36 +12,21 @@
 		93C7544B1DDCDBC900BB094D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C7544A1DDCDBC900BB094D /* FBSDKCoreKit.framework */; };
 		93C7544D1DDCDBD500BB094D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C7544C1DDCDBD500BB094D /* FBSDKLoginKit.framework */; };
 		93C7544F1DDCDBDF00BB094D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C7544E1DDCDBDF00BB094D /* FBSDKShareKit.framework */; };
+		93C754591DDD72FE00BB094D /* AvailableJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C754581DDD72FE00BB094D /* AvailableJobsViewController.swift */; };
+		93C7545B1DDD797E00BB094D /* SingleAvailableJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7545A1DDD797E00BB094D /* SingleAvailableJobsViewController.swift */; };
+		93C7545D1DDD7F6500BB094D /* MyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7545C1DDD7F6500BB094D /* MyJobsViewController.swift */; };
+		93C7545F1DDD7F9700BB094D /* SingleMyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7545E1DDD7F9700BB094D /* SingleMyJobsViewController.swift */; };
 		93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */; };
 		93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AF1DD3DE2000529892 /* ViewController.swift */; };
 		93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B11DD3DE2000529892 /* Main.storyboard */; };
 		93F8F3B51DD3DE2000529892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B41DD3DE2000529892 /* Assets.xcassets */; };
 		93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B61DD3DE2000529892 /* LaunchScreen.storyboard */; };
-		93F8F3C31DD3DE2000529892 /* ZephyrAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3C21DD3DE2000529892 /* ZephyrAppTests.swift */; };
-		93F8F3CE1DD3DE2000529892 /* ZephyrAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3CD1DD3DE2000529892 /* ZephyrAppUITests.swift */; };
 		93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */; };
 		93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DD1DD4DD2100529892 /* treehouse-25.png */; };
 		93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DF1DD4DDC400529892 /* briefcase-25.png */; };
 		93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */; };
 		EA2255631DDB95B50054A896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2255621DDB95B50054A896 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		93F8F3BF1DD3DE2000529892 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93F8F3A21DD3DE1F00529892 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93F8F3A91DD3DE1F00529892;
-			remoteInfo = ZephyrApp;
-		};
-		93F8F3CA1DD3DE2000529892 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93F8F3A21DD3DE1F00529892 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93F8F3A91DD3DE1F00529892;
-			remoteInfo = ZephyrApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		242A3A9812ACC578537C21EA /* Pods-ZephyrApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZephyrApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +35,10 @@
 		93C7544A1DDCDBC900BB094D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		93C7544C1DDCDBD500BB094D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		93C7544E1DDCDBDF00BB094D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		93C754581DDD72FE00BB094D /* AvailableJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableJobsViewController.swift; sourceTree = "<group>"; };
+		93C7545A1DDD797E00BB094D /* SingleAvailableJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAvailableJobsViewController.swift; sourceTree = "<group>"; };
+		93C7545C1DDD7F6500BB094D /* MyJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyJobsViewController.swift; sourceTree = "<group>"; };
+		93C7545E1DDD7F9700BB094D /* SingleMyJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMyJobsViewController.swift; sourceTree = "<group>"; };
 		93F8F3AA1DD3DE1F00529892 /* ZephyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZephyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F8F3AF1DD3DE2000529892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,10 +46,8 @@
 		93F8F3B41DD3DE2000529892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93F8F3B71DD3DE2000529892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93F8F3B91DD3DE2000529892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93F8F3BE1DD3DE2000529892 /* ZephyrAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZephyrAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3C21DD3DE2000529892 /* ZephyrAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZephyrAppTests.swift; sourceTree = "<group>"; };
 		93F8F3C41DD3DE2000529892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93F8F3C91DD3DE2000529892 /* ZephyrAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZephyrAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3CD1DD3DE2000529892 /* ZephyrAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZephyrAppUITests.swift; sourceTree = "<group>"; };
 		93F8F3CF1DD3DE2000529892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treehouse_filled-25.png"; sourceTree = SOURCE_ROOT; };
@@ -82,20 +69,6 @@
 				93C7544F1DDCDBDF00BB094D /* FBSDKShareKit.framework in Frameworks */,
 				93C7544D1DDCDBD500BB094D /* FBSDKLoginKit.framework in Frameworks */,
 				93C754491DDCDBB500BB094D /* Bolts.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93F8F3BB1DD3DE2000529892 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93F8F3C61DD3DE2000529892 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				93F8F3AA1DD3DE1F00529892 /* ZephyrApp.app */,
-				93F8F3BE1DD3DE2000529892 /* ZephyrAppTests.xctest */,
-				93F8F3C91DD3DE2000529892 /* ZephyrAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +126,10 @@
 				93F8F3DF1DD4DDC400529892 /* briefcase-25.png */,
 				93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */,
 				93F8F3AF1DD3DE2000529892 /* ViewController.swift */,
+				93C754581DDD72FE00BB094D /* AvailableJobsViewController.swift */,
+				93C7545A1DDD797E00BB094D /* SingleAvailableJobsViewController.swift */,
+				93C7545C1DDD7F6500BB094D /* MyJobsViewController.swift */,
+				93C7545E1DDD7F9700BB094D /* SingleMyJobsViewController.swift */,
 				93F8F3B11DD3DE2000529892 /* Main.storyboard */,
 				93F8F3B41DD3DE2000529892 /* Assets.xcassets */,
 				93F8F3B61DD3DE2000529892 /* LaunchScreen.storyboard */,
@@ -205,42 +180,6 @@
 			productReference = 93F8F3AA1DD3DE1F00529892 /* ZephyrApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		93F8F3BD1DD3DE2000529892 /* ZephyrAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93F8F3D51DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrAppTests" */;
-			buildPhases = (
-				93F8F3BA1DD3DE2000529892 /* Sources */,
-				93F8F3BB1DD3DE2000529892 /* Frameworks */,
-				93F8F3BC1DD3DE2000529892 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				93F8F3C01DD3DE2000529892 /* PBXTargetDependency */,
-			);
-			name = ZephyrAppTests;
-			productName = ZephyrAppTests;
-			productReference = 93F8F3BE1DD3DE2000529892 /* ZephyrAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		93F8F3C81DD3DE2000529892 /* ZephyrAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93F8F3D81DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrAppUITests" */;
-			buildPhases = (
-				93F8F3C51DD3DE2000529892 /* Sources */,
-				93F8F3C61DD3DE2000529892 /* Frameworks */,
-				93F8F3C71DD3DE2000529892 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				93F8F3CB1DD3DE2000529892 /* PBXTargetDependency */,
-			);
-			name = ZephyrAppUITests;
-			productName = ZephyrAppUITests;
-			productReference = 93F8F3C91DD3DE2000529892 /* ZephyrAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -253,22 +192,13 @@
 				TargetAttributes = {
 					93F8F3A91DD3DE1F00529892 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8X6DGN7A99;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
 							};
 						};
-					};
-					93F8F3BD1DD3DE2000529892 = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 93F8F3A91DD3DE1F00529892;
-					};
-					93F8F3C81DD3DE2000529892 = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 93F8F3A91DD3DE1F00529892;
 					};
 				};
 			};
@@ -286,8 +216,6 @@
 			projectRoot = "";
 			targets = (
 				93F8F3A91DD3DE1F00529892 /* ZephyrApp */,
-				93F8F3BD1DD3DE2000529892 /* ZephyrAppTests */,
-				93F8F3C81DD3DE2000529892 /* ZephyrAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,20 +233,6 @@
 				93F8F3B51DD3DE2000529892 /* Assets.xcassets in Resources */,
 				93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */,
 				93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93F8F3BC1DD3DE2000529892 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93F8F3C71DD3DE2000529892 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,41 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93C7545F1DDD7F9700BB094D /* SingleMyJobsViewController.swift in Sources */,
+				93C754591DDD72FE00BB094D /* AvailableJobsViewController.swift in Sources */,
 				93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */,
+				93C7545B1DDD797E00BB094D /* SingleAvailableJobsViewController.swift in Sources */,
+				93C7545D1DDD7F6500BB094D /* MyJobsViewController.swift in Sources */,
 				93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93F8F3BA1DD3DE2000529892 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93F8F3C31DD3DE2000529892 /* ZephyrAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93F8F3C51DD3DE2000529892 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93F8F3CE1DD3DE2000529892 /* ZephyrAppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		93F8F3C01DD3DE2000529892 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93F8F3A91DD3DE1F00529892 /* ZephyrApp */;
-			targetProxy = 93F8F3BF1DD3DE2000529892 /* PBXContainerItemProxy */;
-		};
-		93F8F3CB1DD3DE2000529892 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93F8F3A91DD3DE1F00529892 /* ZephyrApp */;
-			targetProxy = 93F8F3CA1DD3DE2000529892 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		93F8F3B11DD3DE2000529892 /* Main.storyboard */ = {
@@ -531,7 +420,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8X6DGN7A99;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -551,8 +441,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8X6DGN7A99;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -562,60 +452,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		93F8F3D61DD3DE2000529892 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ZephyrAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZephyrApp.app/ZephyrApp";
-			};
-			name = Debug;
-		};
-		93F8F3D71DD3DE2000529892 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ZephyrAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZephyrApp.app/ZephyrApp";
-			};
-			name = Release;
-		};
-		93F8F3D91DD3DE2000529892 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = ZephyrAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ZephyrApp;
-			};
-			name = Debug;
-		};
-		93F8F3DA1DD3DE2000529892 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = ZephyrAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ZephyrApp;
 			};
 			name = Release;
 		};
@@ -636,24 +472,6 @@
 			buildConfigurations = (
 				93F8F3D31DD3DE2000529892 /* Debug */,
 				93F8F3D41DD3DE2000529892 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		93F8F3D51DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				93F8F3D61DD3DE2000529892 /* Debug */,
-				93F8F3D71DD3DE2000529892 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		93F8F3D81DD3DE2000529892 /* Build configuration list for PBXNativeTarget "ZephyrAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				93F8F3D91DD3DE2000529892 /* Debug */,
-				93F8F3DA1DD3DE2000529892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
