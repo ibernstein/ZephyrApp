@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F0CBC68F5455BA82D76498ED6CDCABD"
+               BlueprintIdentifier = "9B3F9F68D4E56EA90C1B45457EB560B3"
                BuildableName = "Pods_ZephyrApp.framework"
                BlueprintName = "Pods-ZephyrApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F0CBC68F5455BA82D76498ED6CDCABD"
+            BlueprintIdentifier = "9B3F9F68D4E56EA90C1B45457EB560B3"
             BuildableName = "Pods_ZephyrApp.framework"
             BlueprintName = "Pods-ZephyrApp"
             ReferencedContainer = "container:Pods.xcodeproj">

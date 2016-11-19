@@ -42,7 +42,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
     
-    <!-- Start fb -->
+    <!-- Start Facebook Login Code-->
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -65,7 +65,7 @@
         <string>fbauth2</string>
         <string>fbshareextension</string>
     </array>
-    <!-- End FB -->
+    <!-- End Facebook Login Code -->
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -82,5 +82,34 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    
+    <!-- Start Facebook Getting Started Code -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1709291829389815</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1709291829389815</string>
+    <key>FacebookDisplayName</key>
+    <string>Zephyr</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <!-- Dont think we need this
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>{human-readable reason for photo access}</string>
+     -->
+    <!-- End Facebook Getting Started Code -->
+    
 </dict>
 </plist>
