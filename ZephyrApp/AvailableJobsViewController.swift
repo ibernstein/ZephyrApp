@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FBSDKLoginKit
 
-class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FBSDKLoginButtonDelegate {
     
     var tableView: UITableView!
     var dummyJobs = [String]()
@@ -17,12 +19,33 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchDataForTableView()
         self.tableView.reloadData()
     }
+
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did log out")
+    }
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+        else {
+            print("Successfully logged in")
+            DispatchQueue.main.async(execute: {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil )})
+            
+            //loggedInView.result = result;
+            
+        
+    }
     
+}
     func setupTableView(){
         tableView = UITableView(frame: view.frame.offsetBy(dx:0, dy: 0))
         tableView.dataSource = self
@@ -42,6 +65,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
             info.name = dummyJobs[tempRow!]
         }
     }
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummyJobs.count
     }

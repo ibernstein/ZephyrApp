@@ -138,7 +138,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="caI-JO-dHi" kind="show" id="fCX-EU-4rL"/>
+                                    <segue destination="caI-JO-dHi" kind="show" identifier="loginSegue" id="fCX-EU-4rL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaI-j8-azz">
@@ -161,7 +161,7 @@
         <scene sceneID="5oH-L1-HeR">
             <objects>
                 <navigationController id="slR-d9-5rX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="sGB-eO-k0M"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="treehouse-25.png" badgeValue="Jobs" selectedImage="treehouse_filled-25.png" id="sGB-eO-k0M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EIC-Rn-V7W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -172,7 +172,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1a-t2-Ald" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="-544"/>
+            <point key="canvasLocation" x="1881" y="-553"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="VQh-7P-a9c">
@@ -188,7 +188,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="Ias-rC-D68"/>
-                    <navigationItem key="navigationItem" id="Era-1b-Vdd"/>
+                    <navigationItem key="navigationItem" id="Era-1b-Vdd">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="vZf-qP-tmR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4QS-xm-fXq">
+                                <rect key="frame" x="16" y="7" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <segue destination="OY6-9d-ZPn" kind="show" identifier="logoutSegue" id="BQl-EX-MLZ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Rvq-CB-Ahj" kind="show" identifier="SingleAvailView" id="k5X-F8-lSE"/>
                     </connections>
@@ -200,8 +212,8 @@
         <!--Item-->
         <scene sceneID="R8E-fT-0nU">
             <objects>
-                <navigationController id="hpz-ij-gNZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="9ST-T3-8Lx"/>
+                <navigationController id="hpz-ij-gNZ" customClass="logoutSegue" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="briefcase-25.png" badgeValue="home" selectedImage="briefcase_filled-25.png" id="9ST-T3-8Lx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7OE-XL-04r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -321,4 +333,7 @@
         <image name="treehouse-25.png" width="25" height="25"/>
         <image name="treehouse_filled-25.png" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BQl-EX-MLZ"/>
+    </inferredMetricsTieBreakers>
 </document>
