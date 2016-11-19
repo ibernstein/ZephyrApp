@@ -8,7 +8,9 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
 import FBSDKLoginKit
+
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate  {
 
@@ -28,6 +30,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate  {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("here")
         if ((error) != nil) {
             // Process error
         }

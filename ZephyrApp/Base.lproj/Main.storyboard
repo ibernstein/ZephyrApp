@@ -181,9 +181,6 @@
                                 <rect key="frame" x="160" y="318" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook"/>
-                                <connections>
-                                    <segue destination="caI-JO-dHi" kind="show" id="RGG-RW-fYi"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,7 +197,7 @@
         <scene sceneID="5oH-L1-HeR">
             <objects>
                 <navigationController id="slR-d9-5rX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sGB-eO-k0M"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="sGB-eO-k0M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EIC-Rn-V7W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -216,7 +213,6 @@
         <!--Item 1-->
         <scene sceneID="VQh-7P-a9c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wRc-y0-2FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="R5r-Cu-ABu" customClass="AvailableJobsViewController" customModule="ZephyrApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOT-dy-k20"/>
@@ -233,6 +229,7 @@
                         <segue destination="Rvq-CB-Ahj" kind="show" identifier="SingleAvailView" id="k5X-F8-lSE"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRc-y0-2FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2642" y="-543"/>
         </scene>
@@ -240,7 +237,7 @@
         <scene sceneID="R8E-fT-0nU">
             <objects>
                 <navigationController id="hpz-ij-gNZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9ST-T3-8Lx"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="9ST-T3-8Lx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7OE-XL-04r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -338,7 +335,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="FsA-32-4IZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfc-jb-934" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="caI-JO-dHi" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="K1t-PR-9OI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -350,15 +346,15 @@
                         <segue destination="hpz-ij-gNZ" kind="relationship" relationship="viewControllers" id="GhU-Kp-laF"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfc-jb-934" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="948" y="-125"/>
         </scene>
     </scenes>
     <resources>
+        <image name="briefcase-25.png" width="25" height="25"/>
+        <image name="briefcase_filled-25.png" width="25" height="25"/>
         <image name="treehouse-25.png" width="25" height="25"/>
         <image name="treehouse_filled-25.png" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="RGG-RW-fYi"/>
-    </inferredMetricsTieBreakers>
 </document>

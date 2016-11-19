@@ -10,6 +10,9 @@ target 'ZephyrApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
 
  # target 'ZephyrAppTests' do
  #   inherit! :search_paths

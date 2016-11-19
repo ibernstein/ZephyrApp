@@ -418,7 +418,7 @@
 			baseConfigurationReference = 242A3A9812ACC578537C21EA /* Pods-ZephyrApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8X6DGN7A99;
@@ -428,7 +428,7 @@
 				);
 				INFOPLIST_FILE = ZephyrApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
+				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp1234;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -439,9 +439,9 @@
 			baseConfigurationReference = D0A794FEB3171558D94A44E8 /* Pods-ZephyrApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ZephyrApp/ZephyrApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 8X6DGN7A99;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,7 +449,7 @@
 				);
 				INFOPLIST_FILE = ZephyrApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp;
+				PRODUCT_BUNDLE_IDENTIFIER = cse438.ZephyrApp1234;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
