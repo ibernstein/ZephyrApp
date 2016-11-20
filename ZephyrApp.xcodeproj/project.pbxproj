@@ -16,6 +16,7 @@
 		93C7545B1DDD797E00BB094D /* SingleAvailableJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7545A1DDD797E00BB094D /* SingleAvailableJobsViewController.swift */; };
 		93C7545D1DDD7F6500BB094D /* MyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7545C1DDD7F6500BB094D /* MyJobsViewController.swift */; };
 		93C7545F1DDD7F9700BB094D /* SingleMyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7545E1DDD7F9700BB094D /* SingleMyJobsViewController.swift */; };
+		93C7549B1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C7549A1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png */; };
 		93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */; };
 		93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F3AF1DD3DE2000529892 /* ViewController.swift */; };
 		93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3B11DD3DE2000529892 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		93C7545A1DDD797E00BB094D /* SingleAvailableJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAvailableJobsViewController.swift; sourceTree = "<group>"; };
 		93C7545C1DDD7F6500BB094D /* MyJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyJobsViewController.swift; sourceTree = "<group>"; };
 		93C7545E1DDD7F9700BB094D /* SingleMyJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMyJobsViewController.swift; sourceTree = "<group>"; };
+		93C7549A1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-11-20 at 4.08.13 PM.png"; sourceTree = "<group>"; };
 		93F8F3AA1DD3DE1F00529892 /* ZephyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZephyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F8F3AF1DD3DE2000529892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		93F8F3AC1DD3DE1F00529892 /* ZephyrApp */ = {
 			isa = PBXGroup;
 			children = (
+				93C7549A1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png */,
 				EA2255641DDB9B4A0054A896 /* ZephyrApp.entitlements */,
 				93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */,
 				93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */,
@@ -229,6 +232,7 @@
 				EA2255631DDB95B50054A896 /* GoogleService-Info.plist in Resources */,
 				93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */,
 				93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */,
+				93C7549B1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png in Resources */,
 				93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */,
 				93F8F3B51DD3DE2000529892 /* Assets.xcassets in Resources */,
 				93F8F3B31DD3DE2000529892 /* Main.storyboard in Resources */,

@@ -24,7 +24,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         let loginButton = FBSDKLoginButton()
         print ("in view did load")
         view.addSubview(loginButton)
-        loginButton.frame = CGRect(x:16, y:150, width: view.frame.width-32, height:50)
+        loginButton.frame = CGRect(x:16, y:view.frame.height/2, width: view.frame.width-32, height:50)
         loginButton.delegate = self
         
         
