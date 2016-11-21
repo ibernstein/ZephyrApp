@@ -55,7 +55,11 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
     }
     func fetchDataForTableView(){
         dummyJobs.removeAll()
-        dummyJobs.append("Hi Tony")
+        dummyJobs.append("Job1")
+         dummyJobs.append("Job2")
+         dummyJobs.append("Job3")
+        dummyJobs.append("Job4")
+         dummyJobs.append("Job5")
         self.tableView.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
