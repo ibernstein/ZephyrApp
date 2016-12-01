@@ -14,12 +14,12 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate{
 
-    let ref = FIRDatabase.database().reference()
+   
 
+    @IBOutlet weak var testDBData: UILabel!
     
     //@IBOutlet weak var facebookButton: FBSDKLoginButton!
     var loggedIn = false
-    var dummyJobs = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x:16, y:view.frame.height/2, width: view.frame.width-32, height:50)
         loginButton.delegate = self
-        
-        
         // unsure if this is correct
         //facebookButton.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,9 +36,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
     override func viewDidAppear(_ animated: Bool) {
         //if (FBSDKAccessToken.current() != nil && loggedIn == true)
        if FBSDKAccessToken.current() != nil {
-       // performSegue(withIdentifier: "loginSegue", sender: self)
-        
-    }
+        //performSegue(withIdentifier: "loginSegue", sender: self)
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -68,12 +65,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let conditionRef = ref.child("data name")
-        conditionRef.observe(.value, with: <#T##(FIRDataSnapshot) -> Void#>)//void?
     }
 
 }

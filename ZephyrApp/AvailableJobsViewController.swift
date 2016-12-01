@@ -13,8 +13,9 @@ import FBSDKLoginKit
 
 class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FBSDKLoginButtonDelegate {
     
+    let ref = FIRDatabase.database().reference()
     var tableView: UITableView!
-    var dummyJobs = [String]()
+    var allJobs: [Job] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,13 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchDataForTableView()
-        self.tableView.reloadData()
+        
+        
+        
+//        cityRef.observe(.value, with: { (snapshot) in
+//            self.testDBData.text = String(describing: snapshot.value!)
+//        })
+        
     }
 
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -54,28 +61,37 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         view.addSubview(tableView)
     }
     func fetchDataForTableView(){
-        dummyJobs.removeAll()
-        dummyJobs.append("Job1")
-         dummyJobs.append("Job2")
-         dummyJobs.append("Job3")
-        dummyJobs.append("Job4")
-         dummyJobs.append("Job5")
-        self.tableView.reloadData()
+        allJobs.removeAll()
+        let jobsRef = ref.child("Jobs")
+        jobsRef.observe(.value, with: { snapshot in
+            var availJobs: [Job] = []
+            for job in snapshot.children {
+                let tempJob = Job(snapshot: job as! FIRDataSnapshot)
+                availJobs.append(tempJob)
+            }
+            self.allJobs = availJobs
+            self.tableView.reloadData()
+        })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "SingleAvailView"){
             let info = segue.destination as! SingleAvailableJobsViewController
             let tempRow = (sender as AnyObject).row
-            info.name = dummyJobs[tempRow!]
+            info.job = allJobs[tempRow]
         }
     }
-        
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyJobs.count
+        return allJobs.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel!.text = dummyJobs[indexPath.row]
+        cell.textLabel!.text = "\(allJobs[indexPath.row].city), \(allJobs[indexPath.row].state) \(allJobs[indexPath.row].zipCode)"
+        cell.detailTextLabel!.text = "\(allJobs[indexPath.row].date) \(allJobs[indexPath.row].time)"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

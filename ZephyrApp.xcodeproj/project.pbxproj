@@ -26,7 +26,8 @@
 		93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DD1DD4DD2100529892 /* treehouse-25.png */; };
 		93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DF1DD4DDC400529892 /* briefcase-25.png */; };
 		93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */; };
-		EA2255631DDB95B50054A896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2255621DDB95B50054A896 /* GoogleService-Info.plist */; };
+		EA5A61CC1DEFDF2D0045A252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA5A61CB1DEFDF2D0045A252 /* GoogleService-Info.plist */; };
+		EA5A61CE1DEFEE940045A252 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A61CD1DEFEE940045A252 /* Job.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +58,9 @@
 		93F8F3DF1DD4DDC400529892 /* briefcase-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase-25.png"; sourceTree = SOURCE_ROOT; };
 		93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase_filled-25.png"; sourceTree = SOURCE_ROOT; };
 		D0A794FEB3171558D94A44E8 /* Pods-ZephyrApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZephyrApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp.release.xcconfig"; sourceTree = "<group>"; };
-		EA2255621DDB95B50054A896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA2255641DDB9B4A0054A896 /* ZephyrApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZephyrApp.entitlements; sourceTree = "<group>"; };
+		EA5A61CB1DEFDF2D0045A252 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA5A61CD1DEFEE940045A252 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				93F8F3DF1DD4DDC400529892 /* briefcase-25.png */,
 				93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */,
 				93F8F3AF1DD3DE2000529892 /* ViewController.swift */,
+				EA5A61CD1DEFEE940045A252 /* Job.swift */,
 				93C754581DDD72FE00BB094D /* AvailableJobsViewController.swift */,
 				93C7545A1DDD797E00BB094D /* SingleAvailableJobsViewController.swift */,
 				93C7545C1DDD7F6500BB094D /* MyJobsViewController.swift */,
@@ -137,7 +140,7 @@
 				93F8F3B41DD3DE2000529892 /* Assets.xcassets */,
 				93F8F3B61DD3DE2000529892 /* LaunchScreen.storyboard */,
 				93F8F3B91DD3DE2000529892 /* Info.plist */,
-				EA2255621DDB95B50054A896 /* GoogleService-Info.plist */,
+				EA5A61CB1DEFDF2D0045A252 /* GoogleService-Info.plist */,
 			);
 			path = ZephyrApp;
 			sourceTree = "<group>";
@@ -229,8 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */,
-				EA2255631DDB95B50054A896 /* GoogleService-Info.plist in Resources */,
 				93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */,
+				EA5A61CC1DEFDF2D0045A252 /* GoogleService-Info.plist in Resources */,
 				93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */,
 				93C7549B1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png in Resources */,
 				93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */,
@@ -300,6 +303,7 @@
 				93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */,
 				93C7545B1DDD797E00BB094D /* SingleAvailableJobsViewController.swift in Sources */,
 				93C7545D1DDD7F6500BB094D /* MyJobsViewController.swift in Sources */,
+				EA5A61CE1DEFEE940045A252 /* Job.swift in Sources */,
 				93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

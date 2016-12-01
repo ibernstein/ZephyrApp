@@ -11,11 +11,11 @@ import UIKit
 
 class SingleAvailableJobsViewController: UIViewController {
     
-    @IBOutlet weak var chosenName: UILabel!
+    //Connect all labels
     
-    var name = String()
+    let job: Job
     
     override func viewDidLoad() {
-        chosenName.text = name
+        
     }
 }
