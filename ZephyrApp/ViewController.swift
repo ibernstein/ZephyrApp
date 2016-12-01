@@ -14,6 +14,9 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate{
 
+    let ref = FIRDatabase.database().reference()
+
+    
     //@IBOutlet weak var facebookButton: FBSDKLoginButton!
     var loggedIn = false
     var dummyJobs = [String]()
@@ -65,6 +68,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let conditionRef = ref.child("data name")
+        conditionRef.observe(.value, with: <#T##(FIRDataSnapshot) -> Void#>)//void?
     }
 
 }
