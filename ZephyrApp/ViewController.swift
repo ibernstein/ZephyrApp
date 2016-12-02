@@ -14,11 +14,6 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate{
 
-   
-
-    @IBOutlet weak var testDBData: UILabel!
-    
-    //@IBOutlet weak var facebookButton: FBSDKLoginButton!
     var loggedIn = false
     
     override func viewDidLoad() {
@@ -33,10 +28,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         //facebookButton.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         //if (FBSDKAccessToken.current() != nil && loggedIn == true)
-       if FBSDKAccessToken.current() != nil {
-        //performSegue(withIdentifier: "loginSegue", sender: self)
+        if FBSDKAccessToken.current() != nil {
+            //performSegue(withIdentifier: "loginSegue", sender: self)
         }
     }
     
@@ -52,16 +48,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
             print("Successfully logged in")
             loggedIn = true
             DispatchQueue.main.async(execute: {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil )})
- 
-           //loggedInView.result = result;
-            
+                self.performSegue(withIdentifier: "loginSegue", sender: nil )
+            })
         }
         
     }
- 
-
-  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

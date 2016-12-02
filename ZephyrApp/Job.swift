@@ -25,6 +25,23 @@ struct Job {
     let zipCode: String
     let ref: FIRDatabaseReference?
     
+    init(){
+        self.key = ""
+        self.city = ""
+        self.date = ""
+        self.indoor = false
+        self.outdoor = false
+        self.jobStatus = ""
+        self.price = 0.00
+        self.squareFt = 0.00
+        self.state = ""
+        self.streetAddress = ""
+        self.time = ""
+        self.zipCode = ""
+        self.ref = nil
+
+    }
+    
     init(city: String, date: String, indoor: Bool, outdoor: Bool, jobStatus: String, price: Double, squareFt: Double, state: String, streetAddress: String, time: String, zipCode: String, key: String = ""){
         self.key = key
         self.city = city
