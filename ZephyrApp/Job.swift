@@ -61,7 +61,7 @@ struct Job {
     init(snapshot: FIRDataSnapshot){
         key = snapshot.key
         let snapshotValue = snapshot.value as! [String:AnyObject]
-        city = snapshotValue["City"] as! String
+        city = (snapshotValue["City"] as! String)
         date = snapshotValue["Date"] as! String
         indoor = snapshotValue["Indoor"] as! Bool
         outdoor = snapshotValue["Outdoor"] as! Bool
@@ -75,19 +75,19 @@ struct Job {
         ref = snapshot.ref
     }
     
-    func toAnyOption() -> Any {
+    func toAnyObject() -> Any {
         return [
-            "city": city,
-            "date": date,
-            "indoor": indoor,
-            "outdoor": outdoor,
-            "jobStatus": jobStatus,
-            "price": price,
-            "squareFt": squareFt,
-            "state": state,
-            "streetAddress": streetAddress,
-            "time": time,
-            "zipCode": zipCode
+            "City": city,
+            "Date": date,
+            "Indoor": indoor,
+            "Outdoor": outdoor,
+            "JobStatus": jobStatus,
+            "Price": price,
+            "SquareFT": squareFt,
+            "State": state,
+            "StreetAddress": streetAddress,
+            "Time": time,
+            "ZipCode": zipCode
         ]
     }
 }

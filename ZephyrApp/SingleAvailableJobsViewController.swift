@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SingleAvailableJobsViewController: UIViewController {
+class SingleAvailableJobsViewController: UIViewController{
    
     var job = Job()
     

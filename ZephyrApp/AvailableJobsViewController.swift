@@ -23,6 +23,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         setupTableView()
         let loginButton = FBSDKLoginButton()
         loginButton.delegate = self
+        // if user is logged in
     }
     
     //Every time something changes, it calls fetchDataForTableView
@@ -66,6 +67,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
             for job in snapshot.children {
                 let tempJob = Job(snapshot: job as! FIRDataSnapshot)
                 availJobs.append(tempJob)
+
             }
             self.allJobs = availJobs
             self.tableView.reloadData()
