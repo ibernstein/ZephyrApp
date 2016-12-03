@@ -83,7 +83,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
     
     //Change height of table view cells
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 200.0
     }
     
     //Create tabel view based on size of allJobs

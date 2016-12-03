@@ -11,11 +11,9 @@ import UIKit
 
 class SingleMyJobsViewController: UIViewController {
 
-    @IBOutlet weak var chosenName: UILabel!
     
     var name = String()
     
     override func viewDidLoad() {
-        chosenName.text = name
     }
 }
