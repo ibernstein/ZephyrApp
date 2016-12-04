@@ -37,6 +37,12 @@ class SingleAvailableJobsViewController: UIViewController{
         dateLabel.text = job.date
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
+        
+        //START image stuff
+        let url = URL(string: job.imageURL)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
+        jobImage.image = UIImage(data: data!)
+        //END image stuff
     }
     
     @IBAction func acceptJobButtonClicked(_ sender: UIButton) {

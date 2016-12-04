@@ -23,6 +23,7 @@ struct Job {
     let streetAddress: String
     let time: String
     let zipCode: String
+    let imageURL: String
     let ref: FIRDatabaseReference?
     
     init(){
@@ -38,11 +39,12 @@ struct Job {
         self.streetAddress = ""
         self.time = ""
         self.zipCode = ""
+        self.imageURL = ""
         self.ref = nil
 
     }
     
-    init(city: String, date: String, indoor: Bool, outdoor: Bool, jobStatus: String, price: Double, squareFt: Double, state: String, streetAddress: String, time: String, zipCode: String, key: String = ""){
+    init(city: String, date: String, indoor: Bool, outdoor: Bool, jobStatus: String, price: Double, squareFt: Double, state: String, streetAddress: String, time: String, zipCode: String, imageURL: String, key: String = ""){
         self.key = key
         self.city = city
         self.date = date
@@ -55,6 +57,7 @@ struct Job {
         self.streetAddress = streetAddress
         self.time = time
         self.zipCode = zipCode
+        self.imageURL = imageURL
         self.ref = nil
     }
     
@@ -72,6 +75,7 @@ struct Job {
         streetAddress = snapshotValue["StreetAddress"] as! String
         time = snapshotValue["Time"] as! String
         zipCode = snapshotValue["ZipCode"] as! String
+        imageURL = snapshotValue["ImageURL"] as! String
         ref = snapshot.ref
     }
     
@@ -87,7 +91,8 @@ struct Job {
             "State": state,
             "StreetAddress": streetAddress,
             "Time": time,
-            "ZipCode": zipCode
+            "ZipCode": zipCode,
+            "ImageURL": imageURL
         ]
     }
 }
