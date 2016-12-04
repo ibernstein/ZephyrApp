@@ -12,7 +12,7 @@
         <!--Logout View Controller-->
         <scene sceneID="sYb-PV-AK1">
             <objects>
-                <viewController id="zJ4-nf-u24" customClass="LogoutViewController" customModule="ZephyrApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="zJ4-nf-u24" customClass="LogoutViewController" customModule="ZephyrApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dKl-az-bBU"/>
                         <viewControllerLayoutGuide type="bottom" id="6k9-se-Pmj"/>
@@ -29,17 +29,107 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="OY6-9d-ZPn" kind="show" identifier="toLoginPageSegue" id="cLN-1Q-8IH"/>
+                        <segue destination="OY6-9d-ZPn" kind="presentation" identifier="toLoginPageSegue" id="cLN-1Q-8IH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytD-00-KsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="948" y="-1069"/>
         </scene>
+        <!--User Registration-->
+        <scene sceneID="H2t-nk-SKp">
+            <objects>
+                <viewController id="5mn-a0-1TB" customClass="UserRegistration" customModule="ZephyrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7T9-5j-Gpk"/>
+                        <viewControllerLayoutGuide type="bottom" id="J03-JP-3Yp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8u8-bG-urr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dj7-vn-28Q">
+                                <rect key="frame" x="220" y="175" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="droneAction:" destination="5mn-a0-1TB" eventType="valueChanged" id="Cfm-TC-III"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-nS-SHF">
+                                <rect key="frame" x="220" y="237" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="videoAction:" destination="5mn-a0-1TB" eventType="valueChanged" id="KZC-4g-8tk"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UpZ-4y-sRl">
+                                <rect key="frame" x="220" y="300" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="propertyManager:" destination="5mn-a0-1TB" eventType="valueChanged" id="Nd7-xg-JNE"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drone Operator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCJ-bQ-hwX">
+                                <rect key="frame" x="27" y="180" width="120" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Editor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUb-Yh-bef">
+                                <rect key="frame" x="27" y="242" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Property Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1p-WY-VBK">
+                                <rect key="frame" x="27" y="305" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am a..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhU-hU-ljJ">
+                                <rect key="frame" x="137" y="64" width="101" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select one" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIv-gN-KdC">
+                                <rect key="frame" x="147" y="134" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkw-I7-fC8">
+                                <rect key="frame" x="160" y="375" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerUserType:" destination="5mn-a0-1TB" eventType="touchUpInside" id="eKi-ru-UKC"/>
+                                    <segue destination="caI-JO-dHi" kind="show" identifier="loginFromRegSegue" id="Kia-SA-Mo7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="isDroneOperator" destination="dj7-vn-28Q" id="SsU-hu-QRi"/>
+                        <outlet property="isPropertyManager" destination="UpZ-4y-sRl" id="xdT-q2-bkY"/>
+                        <outlet property="isVideoEditor" destination="Xtw-nS-SHF" id="u0G-LA-h11"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axj-jS-M0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="912.5937031484259"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="iM9-QX-yxr">
             <objects>
-                <viewController id="OY6-9d-ZPn" customClass="ViewController" customModule="ZephyrApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="OY6-9d-ZPn" customClass="ViewController" customModule="ZephyrApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Ds-54-3gJ"/>
                         <viewControllerLayoutGuide type="bottom" id="5eq-Ud-cPa"/>
@@ -53,10 +143,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LC-Jn-Bg6">
-                                <rect key="frame" x="23" y="72" width="38" height="30"/>
+                                <rect key="frame" x="23" y="71" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="caI-JO-dHi" kind="show" identifier="loginSegue" id="fCX-EU-4rL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yg-Hy-094">
+                                <rect key="frame" x="281" y="47" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="5mn-a0-1TB" kind="show" identifier="userInfo" id="zEe-GX-pgt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,7 +389,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="l3Y-ca-Nh4">
                             <connections>
-                                <segue destination="zJ4-nf-u24" kind="show" identifier="logoutSegue" id="BYm-DD-IIR"/>
+                                <segue destination="zJ4-nf-u24" kind="presentation" identifier="logoutSegue" id="BYm-DD-IIR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Y4e-1J-d08">
@@ -678,6 +775,7 @@
         <image name="treehouse_filled-25.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Kia-SA-Mo7"/>
         <segue reference="Q0c-P0-cde"/>
         <segue reference="0Ao-D8-V9H"/>
     </inferredMetricsTieBreakers>

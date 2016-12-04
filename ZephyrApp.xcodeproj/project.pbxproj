@@ -30,6 +30,8 @@
 		EA5A61CE1DEFEE940045A252 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A61CD1DEFEE940045A252 /* Job.swift */; };
 		EA73E7771DF22F87005143D1 /* RequestJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA73E7761DF22F87005143D1 /* RequestJobViewController.swift */; };
 		EA8295301DF3508C0028A65E /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA82952F1DF3508C0028A65E /* LogoutViewController.swift */; };
+		EA8295321DF376010028A65E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8295311DF376010028A65E /* User.swift */; };
+		EA8295341DF3929F0028A65E /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8295331DF3929F0028A65E /* UserRegistration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		EA5A61CD1DEFEE940045A252 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		EA73E7761DF22F87005143D1 /* RequestJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestJobViewController.swift; sourceTree = "<group>"; };
 		EA82952F1DF3508C0028A65E /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		EA8295311DF376010028A65E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EA8295331DF3929F0028A65E /* UserRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,9 @@
 				93F8F3DF1DD4DDC400529892 /* briefcase-25.png */,
 				93F8F3AD1DD3DE1F00529892 /* AppDelegate.swift */,
 				93F8F3AF1DD3DE2000529892 /* ViewController.swift */,
+				EA8295331DF3929F0028A65E /* UserRegistration.swift */,
 				EA5A61CD1DEFEE940045A252 /* Job.swift */,
+				EA8295311DF376010028A65E /* User.swift */,
 				EA82952F1DF3508C0028A65E /* LogoutViewController.swift */,
 				93C754581DDD72FE00BB094D /* AvailableJobsViewController.swift */,
 				EA73E7761DF22F87005143D1 /* RequestJobViewController.swift */,
@@ -307,11 +313,13 @@
 				93C7545F1DDD7F9700BB094D /* SingleMyJobsViewController.swift in Sources */,
 				93C754591DDD72FE00BB094D /* AvailableJobsViewController.swift in Sources */,
 				93F8F3B01DD3DE2000529892 /* ViewController.swift in Sources */,
+				EA8295341DF3929F0028A65E /* UserRegistration.swift in Sources */,
 				93C7545B1DDD797E00BB094D /* SingleAvailableJobsViewController.swift in Sources */,
 				EA73E7771DF22F87005143D1 /* RequestJobViewController.swift in Sources */,
 				93C7545D1DDD7F6500BB094D /* MyJobsViewController.swift in Sources */,
 				EA5A61CE1DEFEE940045A252 /* Job.swift in Sources */,
 				EA8295301DF3508C0028A65E /* LogoutViewController.swift in Sources */,
+				EA8295321DF376010028A65E /* User.swift in Sources */,
 				93F8F3AE1DD3DE2000529892 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
