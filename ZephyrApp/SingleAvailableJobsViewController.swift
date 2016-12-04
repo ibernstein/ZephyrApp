@@ -8,11 +8,15 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class SingleAvailableJobsViewController: UIViewController{
    
+    var ref = FIRDatabase.database().reference()
+    
     var job = Job()
     
+    //FIXME Outlets not linked yet
     @IBOutlet weak var outdoorLabel: UILabel!
     @IBOutlet weak var indoorLabel: UILabel!
     @IBOutlet weak var squareFtLabel: UILabel!
@@ -34,11 +38,32 @@ class SingleAvailableJobsViewController: UIViewController{
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
         
-        //Potentially implement into Database
-        //nameLabel.text =
-        //jobImage.Image =
+        
     }
     
     @IBAction func acceptJobButtonClicked(_ sender: UIButton) {
+        //add to user's jobs
+        let usersRef = self.ref.child("Users")
+        //Compare current UserID to all UserIDs
+        usersRef.observeSingleEvent(of: ., with: {(
+            
+        })
+        
+        
+        let userRef =
+        let jobsRef = userRef.child("Jobs")
+        var jobNum = Int()
+        
+        //add Job to users jobs array
+        jobsRef.observeSingleEvent(of: .value, with: {(snapshot: FIRDataSnapshot!) in
+            jobNum = Int(snapshot.childrenCount)//get number of jobs
+            let jobName = "Job\(jobNum)"
+            //chreate a new child
+            let newJobRef = jobsRef.child(jobName)
+            newJobRef.setValue(job.toAnyObject())
+            
+        })
+
+        
     }
 }
