@@ -22,7 +22,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
     var firstName = String()
     var lastName = String()
     
-    
     var ref = FIRDatabase.database().reference()
     
     let loginButton: FBSDKLoginButton = {
@@ -36,31 +35,48 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x:16, y:view.frame.height/2, width: view.frame.width-32, height:50)
         loginButton.delegate = self
-
-        if FBSDKAccessToken.current() != nil {
-            fetchProfile()
-            self.performSegue(withIdentifier: "loginSegue", sender: nil )
-        }
+        DispatchQueue.main.async(execute: {
+            self.fetchProfile()
+            self.addNewUserToDatabase()
+        })
+        //fetchProfile()
+        //sleep(12)
+//        if FBSDKAccessToken.current() != nil {
+//            let userRef = ref.child("Users").child("\(userId)")
+//            print("view contorller:  \(userId)")
+//            userRef.observeSingleEvent(of: .value, with: { snapshot in
+//                self.user = User(snapshot: snapshot)
+//            })
+//            //DispatchQueue.main.async(execute: {
+//             //   self.performSegue(withIdentifier: "loginSegue", sender: nil )
+//            //})
+//        }
     }
     
     func fetchProfile(){
         let parameters = ["fields": "email, first_name, last_name, id"]
+       
+        print("Before requst")
         
-        FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, err) in
+       FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, err) in
+             print("Top of graph request")
             if err != nil {
                 print("Failed to start graph request:", err!)
                 return
             }
             else{
                 do{
+                    print("Middle of graph request")
                     let userData = result as? NSDictionary
                     self.userId = userData?["id"] as! String
                     self.email = userData?["email"] as! String
                     self.firstName = userData?["first_name"] as! String
                     self.lastName = userData?["last_name"] as! String
+                    print("In Graph Request: \(self.userId)")
                 }
             }
         })
+        print("Post Graph Request: \(userId)")
     }
     
     
@@ -73,6 +89,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
                 let tempUser = User(snapshot: user as! FIRDataSnapshot)
                 if tempUser.userId == self.userId {
                     self.isNewUser = false
+                    self.user = User(snapshot: user as! FIRDataSnapshot)
                 } //if it finishes with isNewUser = true we know the user isn't in the database yet
             }
             if self.isNewUser {
@@ -92,6 +109,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
             let info = segue.destination as! UserRegistration
             info.user = self.user
         }
+        if(segue.identifier == "loginSegue"){
+            print("View Controller's User ID: \(self.user.userId)")
+            let tab = segue.destination as! UITabBarController
+            let nav = tab.viewControllers?[0] as! UINavigationController
+            let info = nav.viewControllers[0] as! AvailableJobsViewController
+            print("Available User from info: \(info.user.userId)")
+            info.user = self.user
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -104,13 +129,13 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
             return
         }
         else {
-            fetchProfile()
-            addNewUserToDatabase()
+//            DispatchQueue.main.async(execute: {
+//                self.fetchProfile()
+//            })
+            //addNewUserToDatabase()
             print("Successfully logged in")
             loggedIn = true
-            if(self.isNewUser == false){
-                self.performSegue(withIdentifier: "loginSegue", sender: nil )
-            }
+            self.performSegue(withIdentifier: "loginSegue", sender: nil )
         }
     }
     

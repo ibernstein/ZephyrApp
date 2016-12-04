@@ -15,16 +15,21 @@ class MyJobsViewController: UIViewController, UITableViewDataSource, UITableView
     var ref = FIRDatabase.database().reference()
     var tableView: UITableView!
     var myJobs: [Job]=[]
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        let firstTab = self.tabBarController?.viewControllers?[0] as! UINavigationController
+        let info = firstTab.viewControllers[0] as! AvailableJobsViewController
+        self.user = info.user
+        print("Available Jobs as info: \(info.user.userId)")
+        print("My Jobs as self: \(self.user.userId)")
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchDataForTableView()
         self.tableView.reloadData()
     }
-    
     func setupTableView(){
         tableView = UITableView(frame: view.frame.offsetBy(dx:0, dy: 0))
         tableView.dataSource = self
@@ -33,13 +38,22 @@ class MyJobsViewController: UIViewController, UITableViewDataSource, UITableView
         view.addSubview(tableView)
     }
     func fetchDataForTableView(){
+        print("Got into fetchDataForTabelView")
         self.myJobs.removeAll()
-        let usersRef = ref.child("Users")
-        let myJobsRef = usersRef.child("Jobs")//FIXME turn this into an if - might crash if there are no jobs
-        myJobsRef.observe(.value, with: { snapshot in
-            for job in snapshot.children {
-                let tempJob = Job(snapshot: job as! FIRDataSnapshot)
-                self.myJobs.append(tempJob)
+        print(self.user.userId)
+        let userRef = ref.child("Users").child(self.user.userId)
+        print("Got past userRef")
+        userRef.observe(.value, with: { snapshot in
+            print("into observe")
+            if snapshot.hasChild("Jobs"){
+                print("past has Child when shouldn't be")
+                for job in snapshot.children {
+                    let tempJob = Job(snapshot: job as! FIRDataSnapshot)
+                    self.myJobs.append(tempJob)
+                }
+            }
+            else{
+                print("User has no Jobs")
             }
         })
         self.tableView.reloadData()
@@ -49,6 +63,7 @@ class MyJobsViewController: UIViewController, UITableViewDataSource, UITableView
             let info = segue.destination as! SingleMyJobsViewController
             let tempRow = (sender as AnyObject).row
             info.job = myJobs[tempRow!]
+            info.user = self.user
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +86,6 @@ class MyJobsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        //cell.imageView =
         cell.textLabel!.text = "\(myJobs[indexPath.row].city), \(myJobs[indexPath.row].state) \(myJobs[indexPath.row].zipCode)"
         cell.detailTextLabel!.text = "\(myJobs[indexPath.row].date) \(myJobs[indexPath.row].time)"
         
@@ -80,7 +94,6 @@ class MyJobsViewController: UIViewController, UITableViewDataSource, UITableView
         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
         cell.imageView?.image = UIImage(data: data!)
         //END image stuff
-        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

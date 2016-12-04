@@ -28,6 +28,18 @@ class UserRegistration: UIViewController{
         newUsersRef.setValue(self.user.toAnyObject())
         self.performSegue(withIdentifier: "loginFromRegSegue", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if(segue.identifier == "loginFromRegSegue"){
+            print("View Controller's User ID: \(self.user.userId)")
+            let tab = segue.destination as! UITabBarController
+            let nav = tab.viewControllers?[0] as! UINavigationController
+            let info = nav.viewControllers[0] as! AvailableJobsViewController
+            print("Available User from info: \(info.user.userId)")
+            info.user = self.user
+        }
+    }
+    
     @IBAction func droneAction(_ sender: Any) {
         isPropertyManager.isOn = false
         isVideoEditor.isOn = false
@@ -56,11 +68,11 @@ class UserRegistration: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    isDroneOperator.isOn = true
-    isPropertyManager.isOn = false
-    isVideoEditor.isOn = false
-    self.user.isDroneOperator = true
-    self.user.isPropertyManager = false
-    self.user.isEditor = false
+        isDroneOperator.isOn = true
+        isPropertyManager.isOn = false
+        isVideoEditor.isOn = false
+        self.user.isDroneOperator = true
+        self.user.isPropertyManager = false
+        self.user.isEditor = false
     }
 }

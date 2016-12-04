@@ -11,42 +11,24 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 
-class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FBSDKLoginButtonDelegate {
+class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var ref = FIRDatabase.database().reference()
     var tableView: UITableView!
     var allJobs: [Job] = []
+    var user = User()
     
     //Sets up table view initially & creates Facebook login button
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        let loginButton = FBSDKLoginButton()
-        loginButton.delegate = self
+        print("Available Jobs as self: \(self.user.userId)")
         // if user is logged in
     }
     
     //Every time something changes, it calls fetchDataForTableView
     override func viewWillAppear(_ animated: Bool) {
         fetchDataForTableView()
-    }
-    
-    //Facebook login in functionality
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("Did log out")
-    }
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error != nil {
-            print(error)
-            return
-        }
-        else {
-            print("Successfully logged in")
-            DispatchQueue.main.async(execute: {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil )
-            })
-        }
-    
     }
     
     //Creates table view
@@ -80,6 +62,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
             let info = segue.destination as! SingleAvailableJobsViewController
             let tempRow = (sender as AnyObject).row
             info.job = allJobs[tempRow!]
+            info.user = self.user
         }
     }
     

@@ -505,8 +505,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-1c-dLH">
-                                <rect key="frame" x="68" y="442" width="74" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zip Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-1c-dLH">
+                                <rect key="frame" x="68" y="442" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -591,9 +591,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anx-0v-E1L">
+                                <rect key="frame" x="67" y="558" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unknown" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aab-Rq-mOR">
+                                <rect key="frame" x="150" y="557" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="aab-Rq-mOR" id="2V4-EP-vDU"/>
+                        <outlet property="dateLabel" destination="BPa-v5-iD9" id="ciG-Mp-3mL"/>
+                        <outlet property="indoorLabel" destination="ifO-V5-t96" id="xYz-ud-Hpj"/>
+                        <outlet property="jobImage" destination="Bt6-qA-9cD" id="hDa-NU-y5W"/>
+                        <outlet property="nameLabel" destination="bRn-En-O5u" id="KDg-Vv-Fuh"/>
+                        <outlet property="outdoorLabel" destination="Gn9-ai-dIi" id="ta3-Ib-Ay2"/>
+                        <outlet property="priceLabel" destination="uxs-UT-gJS" id="AEd-rn-Spc"/>
+                        <outlet property="squareFtLabel" destination="Fga-08-f9c" id="tDh-1G-Zdm"/>
+                        <outlet property="timeLabel" destination="IV3-Xu-LP6" id="ggJ-oS-I6E"/>
+                        <outlet property="zipCodeLabel" destination="2DG-In-Jnh" id="AB7-aO-j8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3s-T3-Ek3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -741,7 +767,7 @@
                         <outlet property="priceLabel" destination="4nN-Vk-CU6" id="06D-MV-Gea"/>
                         <outlet property="squareFtLabel" destination="oxm-j5-Zle" id="hxl-eE-Q8o"/>
                         <outlet property="timeLabel" destination="FJ1-oe-NGi" id="aKb-Yr-zE2"/>
-                        <outlet property="zipCodeLabel" destination="JD1-tI-C1z" id="UeW-wp-TZv"/>
+                        <outlet property="zipCodeLabel" destination="JD1-tI-C1z" id="SLm-0n-TTp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FvH-Lc-KEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -775,8 +801,8 @@
         <image name="treehouse_filled-25.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kia-SA-Mo7"/>
-        <segue reference="Q0c-P0-cde"/>
+        <segue reference="BZf-jp-Ykb"/>
+        <segue reference="fCX-EU-4rL"/>
         <segue reference="0Ao-D8-V9H"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ import UIKit
 class SingleMyJobsViewController: UIViewController {
 
     var job = Job()
+    var user = User()
     
     @IBOutlet weak var outdoorLabel: UILabel!
     @IBOutlet weak var indoorLabel: UILabel!
@@ -22,6 +23,7 @@ class SingleMyJobsViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var jobImage: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         if(job.outdoor){outdoorLabel.text = "Yes"}
@@ -33,6 +35,7 @@ class SingleMyJobsViewController: UIViewController {
         dateLabel.text = job.date
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
+        addressLabel.text = job.streetAddress
 
     }
     

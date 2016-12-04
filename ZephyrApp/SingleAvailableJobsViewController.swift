@@ -15,8 +15,8 @@ class SingleAvailableJobsViewController: UIViewController{
     var ref = FIRDatabase.database().reference()
     
     var job = Job()
+    var user = User()
     
-    //FIXME Outlets not linked yet
     @IBOutlet weak var outdoorLabel: UILabel!
     @IBOutlet weak var indoorLabel: UILabel!
     @IBOutlet weak var squareFtLabel: UILabel!
@@ -37,33 +37,11 @@ class SingleAvailableJobsViewController: UIViewController{
         dateLabel.text = job.date
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
-        
-        
     }
     
     @IBAction func acceptJobButtonClicked(_ sender: UIButton) {
         //add to user's jobs
-        let usersRef = self.ref.child("Users")
-        //Compare current UserID to all UserIDs
-        usersRef.observeSingleEvent(of: ., with: {(
-            
-        })
-        
-        
-        let userRef =
-        let jobsRef = userRef.child("Jobs")
-        var jobNum = Int()
-        
-        //add Job to users jobs array
-        jobsRef.observeSingleEvent(of: .value, with: {(snapshot: FIRDataSnapshot!) in
-            jobNum = Int(snapshot.childrenCount)//get number of jobs
-            let jobName = "Job\(jobNum)"
-            //chreate a new child
-            let newJobRef = jobsRef.child(jobName)
-            newJobRef.setValue(job.toAnyObject())
-            
-        })
-
-        
+        let newUserJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(job.key)")
+        newUserJobRef.setValue(job.toAnyObject())
     }
 }
