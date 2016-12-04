@@ -22,8 +22,7 @@ class UserRegistration: UIViewController{
     @IBOutlet weak var isVideoEditor: UISwitch!
     
     @IBAction func registerUserType(_ sender: Any) {
-        print("first")
-        print("\(self.user.userId)")
+        print("User Registration user.Id as self: \(self.user.userId)")
         let newUsersRef = FIRDatabase.database().reference().child("Users").child(self.user.userId)
         newUsersRef.setValue(self.user.toAnyObject())
         self.performSegue(withIdentifier: "loginFromRegSegue", sender: nil)
@@ -31,11 +30,10 @@ class UserRegistration: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if(segue.identifier == "loginFromRegSegue"){
-            print("View Controller's User ID: \(self.user.userId)")
+            print("User Registration's User ID: \(self.user.userId)")
             let tab = segue.destination as! UITabBarController
             let nav = tab.viewControllers?[0] as! UINavigationController
             let info = nav.viewControllers[0] as! AvailableJobsViewController
-            print("Available User from info: \(info.user.userId)")
             info.user = self.user
         }
     }

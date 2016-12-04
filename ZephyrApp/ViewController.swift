@@ -35,53 +35,36 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x:16, y:view.frame.height/2, width: view.frame.width-32, height:50)
         loginButton.delegate = self
-        DispatchQueue.main.async(execute: {
-            self.fetchProfile()
-            self.addNewUserToDatabase()
-        })
-        //fetchProfile()
-        //sleep(12)
-//        if FBSDKAccessToken.current() != nil {
-//            let userRef = ref.child("Users").child("\(userId)")
-//            print("view contorller:  \(userId)")
-//            userRef.observeSingleEvent(of: .value, with: { snapshot in
-//                self.user = User(snapshot: snapshot)
-//            })
-//            //DispatchQueue.main.async(execute: {
-//             //   self.performSegue(withIdentifier: "loginSegue", sender: nil )
-//            //})
-//        }
+        if FBSDKAccessToken.current() != nil{
+            fetchProfile()
+            sleep(1)
+            fetchUserDatabaseInfo()
+        }
     }
     
     func fetchProfile(){
         let parameters = ["fields": "email, first_name, last_name, id"]
        
-        print("Before requst")
-        
-       FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, err) in
-             print("Top of graph request")
+        FBSDKGraphRequest(graphPath: "me", parameters: parameters).start(completionHandler: { (connection, result, err) in
+            print("Top of graph request")
             if err != nil {
                 print("Failed to start graph request:", err!)
                 return
             }
             else{
                 do{
-                    print("Middle of graph request")
                     let userData = result as? NSDictionary
                     self.userId = userData?["id"] as! String
                     self.email = userData?["email"] as! String
                     self.firstName = userData?["first_name"] as! String
                     self.lastName = userData?["last_name"] as! String
-                    print("In Graph Request: \(self.userId)")
                 }
             }
         })
-        print("Post Graph Request: \(userId)")
     }
     
     
-    func addNewUserToDatabase(){
-        
+    func fetchUserDatabaseInfo(){
         let usersRef = ref.child("Users")
         
         usersRef.observeSingleEvent(of: .value, with: { snapshot in
@@ -90,6 +73,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
                 if tempUser.userId == self.userId {
                     self.isNewUser = false
                     self.user = User(snapshot: user as! FIRDataSnapshot)
+                    break
                 } //if it finishes with isNewUser = true we know the user isn't in the database yet
             }
             if self.isNewUser {
@@ -98,14 +82,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
                 self.user = User(userId: self.userId, firstName: self.firstName, lastName: self.lastName, email: self.email, isDroneOperator: false, isEditor: false, isPropertyManager: false, userJobs: userJobs)
                 self.performSegue(withIdentifier: "userInfo", sender: nil)
             } else {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 print("User already registered.")
             }
-            
         })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if(segue.identifier == "userInfo"){
+            print("View Controller's User ID: \(self.user.userId)")
             let info = segue.destination as! UserRegistration
             info.user = self.user
         }
@@ -114,7 +99,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
             let tab = segue.destination as! UITabBarController
             let nav = tab.viewControllers?[0] as! UINavigationController
             let info = nav.viewControllers[0] as! AvailableJobsViewController
-            print("Available User from info: \(info.user.userId)")
             info.user = self.user
         }
     }
@@ -129,13 +113,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
             return
         }
         else {
-//            DispatchQueue.main.async(execute: {
-//                self.fetchProfile()
-//            })
-            //addNewUserToDatabase()
+            fetchProfile()
+            sleep(1)
+            fetchUserDatabaseInfo()
             print("Successfully logged in")
-            loggedIn = true
-            self.performSegue(withIdentifier: "loginSegue", sender: nil )
         }
     }
     
