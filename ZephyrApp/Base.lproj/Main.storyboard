@@ -549,7 +549,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Give Up"/>
                                 <connections>
-                                    <action selector="giveUpJob:" destination="Coh-WE-dIR" eventType="touchUpInside" id="35u-yx-RUf"/>
                                     <segue destination="caI-JO-dHi" kind="presentation" identifier="completeJobSegue" id="IyM-Jx-7FM"/>
                                 </connections>
                             </button>
@@ -633,6 +632,7 @@
                         <outlet property="addressLabel" destination="aab-Rq-mOR" id="2V4-EP-vDU"/>
                         <outlet property="completeButton" destination="LWo-Nt-bDC" id="jQk-kq-EdK"/>
                         <outlet property="dateLabel" destination="BPa-v5-iD9" id="ciG-Mp-3mL"/>
+                        <outlet property="giveUpJobButton" destination="kAe-dF-PbS" id="UGv-3K-zor"/>
                         <outlet property="indoorLabel" destination="ifO-V5-t96" id="xYz-ud-Hpj"/>
                         <outlet property="jobImage" destination="Bt6-qA-9cD" id="hDa-NU-y5W"/>
                         <outlet property="nameLabel" destination="bRn-En-O5u" id="KDg-Vv-Fuh"/>
@@ -825,7 +825,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jbW-Rg-nvk"/>
-        <segue reference="q2l-oy-cTX"/>
         <segue reference="oxB-hj-jVo"/>
+        <segue reference="q2l-oy-cTX"/>
     </inferredMetricsTieBreakers>
 </document>

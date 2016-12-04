@@ -28,18 +28,29 @@ class SingleMyJobsViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     
     @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var giveUpJobButton: UIButton!
     
+    
+   
     
     override func viewDidLoad() {
         completeButton.isHidden = true
+        giveUpJobButton.isHidden = true
+        if(self.user.isPropertyManager){
+            if self.job.jobStatus == "Needs Drone" && self.user.userId == self.job.propertyManager{
+                giveUpJobButton.isHidden = false
+            }
+        }
         if(self.user.isDroneOperator){
             if self.job.jobStatus == "Drone Aquired" && self.user.userId == self.job.droneOperator {
-                completeButton.isHidden = false;
+                completeButton.isHidden = false
+                giveUpJobButton.isHidden = false
             }
         }
         if(self.user.isEditor){
             if self.job.jobStatus == "Editor Aquired" && self.user.userId == self.job.videoEditor{
-                completeButton.isHidden = false;
+                completeButton.isHidden = false
+                giveUpJobButton.isHidden = false
             }
         }
         
@@ -53,6 +64,7 @@ class SingleMyJobsViewController: UIViewController {
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
         addressLabel.text = job.streetAddress
+        nameLabel.text = "Job Status: \(job.jobStatus)" //actually displays job Status, not name
         
         //START image stuff
         print(job.imageURL)

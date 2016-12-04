@@ -44,7 +44,7 @@ class RequestJobViewController: UIViewController, UIScrollViewDelegate {
     
     func timePickerValueChanged(sender: UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.short
         timeText.text = dateFormatter.string(from: sender.date)
     }
     

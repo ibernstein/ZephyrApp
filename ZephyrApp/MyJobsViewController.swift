@@ -81,7 +81,9 @@ class MyJobsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel!.text = "\(myJobs[indexPath.row].city), \(myJobs[indexPath.row].state) \(myJobs[indexPath.row].zipCode)"
-        cell.detailTextLabel!.text = "\(myJobs[indexPath.row].date) \(myJobs[indexPath.row].time)"
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.detailTextLabel!.text = "\(myJobs[indexPath.row].date) \(myJobs[indexPath.row].time)\n Job Status: \(myJobs[indexPath.row].jobStatus)"
         
         //START image stuff
         let url = URL(string: myJobs[indexPath.row].imageURL)

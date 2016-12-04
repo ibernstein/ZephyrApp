@@ -37,6 +37,7 @@ class SingleAvailableJobsViewController: UIViewController{
         dateLabel.text = job.date
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
+        nameLabel.text = "Job Status: \(job.jobStatus)" //actually displays job Status, not name
         
         //START image stuff
         print(job.imageURL)
