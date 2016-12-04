@@ -17,13 +17,16 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
     var tableView: UITableView!
     var allJobs: [Job] = []
     var user = User()
+    @IBOutlet weak var addJobButton: UIButton!
     
     //Sets up table view initially & creates Facebook login button
     override func viewDidLoad() {
         super.viewDidLoad()
+        addJobButton.isHidden = true
         setupTableView()
-        print("Available Jobs as self: \(self.user.userId)")
-        // if user is logged in
+        if(user.isPropertyManager){
+            addJobButton.isHidden = false
+        }
     }
     
     //Every time something changes, it calls fetchDataForTableView
@@ -40,16 +43,31 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         view.addSubview(tableView)
     }
     
+  
     //Auto Reupdates information in the allJobs variable for the table
     func fetchDataForTableView(){
         allJobs.removeAll()
-        let jobsRef = ref.child("Jobs")
-        jobsRef.observe(.value, with: { snapshot in
+        let databaseRef = self.ref
+        databaseRef.observe(.value, with: { snapshot in
             var availJobs: [Job] = []
-            for job in snapshot.children {
+            let jobsSnapshot = snapshot.childSnapshot(forPath: "Jobs")
+            let userSnapshot = snapshot.childSnapshot(forPath: "Users").childSnapshot(forPath: "\(self.user.userId)")
+            let tempUser = User(snapshot: userSnapshot)
+            for job in jobsSnapshot.children {
                 let tempJob = Job(snapshot: job as! FIRDataSnapshot)
-                availJobs.append(tempJob)
-
+                if tempUser.isDroneOperator {
+                    if(tempJob.jobStatus == "Needs Drone") {
+                        availJobs.append(tempJob)
+                    }
+                }
+                if tempUser.isPropertyManager {
+                    //Create a message for user
+                }
+                if tempUser.isEditor {
+                    if(tempJob.jobStatus == "Needs Editor") {
+                        availJobs.append(tempJob)
+                    }
+                }
             }
             self.allJobs = availJobs
             self.tableView.reloadData()
@@ -62,6 +80,10 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
             let info = segue.destination as! SingleAvailableJobsViewController
             let tempRow = (sender as AnyObject).row
             info.job = allJobs[tempRow!]
+            info.user = self.user
+        }
+        if(segue.identifier == "RequestJobAvailSegue"){
+            let info = segue.destination as! RequestJobViewController
             info.user = self.user
         }
     }
@@ -81,6 +103,19 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel!.text = "\(allJobs[indexPath.row].city), \(allJobs[indexPath.row].state) \(allJobs[indexPath.row].zipCode)"
         cell.detailTextLabel!.text = "\(allJobs[indexPath.row].date) \(allJobs[indexPath.row].time)"
+        
+        //START image stuff
+        let url = URL(string: allJobs[indexPath.row].imageURL)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
+        let tempImage = UIImage(data: data!)
+        let size = CGSize(width: 130, height: 90)
+        let rect = CGRect(x: 0, y: 0, width: CGFloat(size.width), height: CGFloat(size.height))
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        tempImage?.draw(in: rect)
+        cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //END image stuff
+        
         return cell
     }
     

@@ -16,7 +16,7 @@ struct Job {
     let date: String
     let indoor: Bool
     let outdoor: Bool
-    let jobStatus: String
+    var jobStatus: String
     let price: Double
     let squareFt: Double
     let state: String
@@ -24,6 +24,9 @@ struct Job {
     let time: String
     let zipCode: String
     let imageURL: String
+    var droneOperator: String
+    var propertyManager: String
+    var videoEditor: String
     let ref: FIRDatabaseReference?
     
     init(){
@@ -40,11 +43,14 @@ struct Job {
         self.time = ""
         self.zipCode = ""
         self.imageURL = ""
+        self.droneOperator = ""
+        self.propertyManager = ""
+        self.videoEditor = ""
         self.ref = nil
 
     }
     
-    init(city: String, date: String, indoor: Bool, outdoor: Bool, jobStatus: String, price: Double, squareFt: Double, state: String, streetAddress: String, time: String, zipCode: String, imageURL: String, key: String = ""){
+    init(city: String, date: String, indoor: Bool, outdoor: Bool, jobStatus: String, price: Double, squareFt: Double, state: String, streetAddress: String, time: String, zipCode: String, imageURL: String, droneOperator: String, propertyManager: String, videoEditor: String, key: String = ""){
         self.key = key
         self.city = city
         self.date = date
@@ -58,6 +64,9 @@ struct Job {
         self.time = time
         self.zipCode = zipCode
         self.imageURL = imageURL
+        self.droneOperator = droneOperator
+        self.propertyManager = propertyManager
+        self.videoEditor = videoEditor
         self.ref = nil
     }
     
@@ -76,6 +85,9 @@ struct Job {
         time = snapshotValue["Time"] as! String
         zipCode = snapshotValue["ZipCode"] as! String
         imageURL = snapshotValue["ImageURL"] as! String
+        droneOperator = snapshotValue["DroneOperator"] as! String
+        propertyManager = snapshotValue["PropertyManager"] as! String
+        videoEditor = snapshotValue["VideoEditor"] as! String
         ref = snapshot.ref
     }
     
@@ -92,7 +104,10 @@ struct Job {
             "StreetAddress": streetAddress,
             "Time": time,
             "ZipCode": zipCode,
-            "ImageURL": imageURL
+            "ImageURL": imageURL,
+            "DroneOperator": droneOperator,
+            "PropertyManager": propertyManager,
+            "VideoEditor": videoEditor
         ]
     }
 }

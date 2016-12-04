@@ -59,7 +59,11 @@ struct User {
         isEditor = snapshotValue["IsEditor"] as! Bool
         isPropertyManager = snapshotValue["IsPropertyManager"] as! Bool
         if snapshotValue["Jobs"] != nil {
-            userJobs = snapshotValue["Jobs"] as! [Job]
+            userJobs = []
+            let snapshotJobs = snapshot.childSnapshot(forPath: "Jobs")
+            for job in snapshotJobs.children {
+                userJobs.append(Job(snapshot: (job as! FIRDataSnapshot)))
+            }
         }else {
             userJobs = []
         }

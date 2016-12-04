@@ -14,8 +14,8 @@ import Firebase
 class RequestJobViewController: UIViewController, UIScrollViewDelegate {
     
     var ref = FIRDatabase.database().reference()
+    var user = User()
 
-    
     @IBOutlet weak var outdoorSwitch: UISwitch!
     @IBOutlet weak var indoorSwitch: UISwitch!
     @IBOutlet weak var squareFtText: UITextField!
@@ -28,21 +28,38 @@ class RequestJobViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var calculatedPriceLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        
-//    }
-//    
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//        return scrollView.subviews.first
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //scrollView.delegate = self
         scrollView.contentSize.height = 850
         //view.addSubview(scrollView)
         
+    }
+    
+    func datePickerValueChanged(sender: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+                dateText.text = dateFormatter.string(from: sender.date)
+    }
+    
+    func timePickerValueChanged(sender: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium
+        timeText.text = dateFormatter.string(from: sender.date)
+    }
+    
+    @IBAction func chooseDate(_ sender: UITextField) {
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @IBAction func chooseTime(_ sender: UITextField) {
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.time
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(self.timePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
     func getRandomHouseImageURL() -> String {
@@ -54,36 +71,63 @@ class RequestJobViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func requestJobClicked(_ sender: UIButton) {
-        let calculatedPrice = 400.00 //Double(calculatedPriceLabel.text!)
-        let squareFt = Double(squareFtText.text!)
-        
-        let alert = UIAlertController(title: "Confirm Job Price", message: "$\(calculatedPrice)", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default){ action in
-            
-            let job = Job(city: self.cityText.text!, date: self.dateText.text!, indoor: self.indoorSwitch.isOn, outdoor: self.outdoorSwitch.isOn, jobStatus:"NeedsDrone", price: calculatedPrice, squareFt: squareFt!, state: self.stateText.text!, streetAddress: self.streetAddressText.text!, time: self.timeText.text!, zipCode: self.zipCodeText.text!, imageURL: self.getRandomHouseImageURL())
-            
-            let jobsRef = self.ref.child("Jobs")
-            var jobNum = Int()
-            jobsRef.observeSingleEvent(of: .value, with: {(snapshot: FIRDataSnapshot!) in
-                jobNum = Int(snapshot.childrenCount)
-                let jobName = "Job\(jobNum)"
-                //chreate a new child
-                let newJobRef = jobsRef.child(jobName)
-                newJobRef.setValue(job.toAnyObject())
-                
-            })
-
-                      // make sure nothing is nil
-            self.performSegue(withIdentifier: "JobRequested", sender: nil)
+        var squareFt = 0.0
+        if Double(squareFtText.text!) != nil && Double(squareFtText.text!)! > 0.0 && Int(zipCodeText.text!) != nil && Int(zipCodeText.text!)! > 0 {
+            squareFt = Double(squareFtText.text!)!
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        
-        
-        alert.addAction(confirmAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-        
+        else{
+            let alert = UIAlertController(title: "Incorrect Information", message: "Confirm that following fields are correct\nSquare Ft: type Double\nZipcode: type Int\nLastly, make sure all fields are filled out", preferredStyle: .alert)
+            let retryAction = UIAlertAction(title: "Retry", style: .default){ action in
+                return
+            }
+            alert.addAction(retryAction)
+            present(alert, animated: true, completion: nil)
+        }
+        if streetAddressText.text!.characters.count > 0 && cityText.text!.characters.count > 0  && stateText.text!.characters.count > 0  && timeText.text!.characters.count > 0 && dateText.text!.characters.count > 0{
+            let calculatedPrice = squareFt * 0.05
+            
+            let alert = UIAlertController(title: "Confirm Job Price", message: "$\(calculatedPrice)", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default){ action in
+                
+                let job = Job(city: self.cityText.text!, date: self.dateText.text!, indoor: self.indoorSwitch.isOn, outdoor: self.outdoorSwitch.isOn, jobStatus:"Needs Drone", price: calculatedPrice, squareFt: squareFt, state: self.stateText.text!, streetAddress: self.streetAddressText.text!, time: self.timeText.text!, zipCode: self.zipCodeText.text!, imageURL: self.getRandomHouseImageURL(), droneOperator: "Not Found", propertyManager: self.user.userId, videoEditor: "Not Found")
+                
+                let databaseRef = self.ref
+                databaseRef.observeSingleEvent(of: .value, with: {(snapshot: FIRDataSnapshot!) in
+                    let jobNum = (snapshot.childSnapshot(forPath: "Job Count Constant").value as! Int) + 1
+                    let jobName = "Job \(jobNum)"
+                    //create a new child
+                    let newJobRef = databaseRef.child("Jobs").child(jobName)
+                    newJobRef.setValue(job.toAnyObject())
+                    databaseRef.child("Job Count Constant").setValue(jobNum as AnyObject)
+                    databaseRef.child("Users").child(self.user.userId).child("Jobs").child(jobName).setValue(job.toAnyObject())
+                    self.performSegue(withIdentifier: "jobRequested", sender: nil)
+                })
+                // make sure nothing is nil
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+            
+            alert.addAction(confirmAction)
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
+        }
+        else{
+            let alert = UIAlertController(title: "Incorrect Information", message: "Confirm that all fields are filled out", preferredStyle: .alert)
+            let retryAction = UIAlertAction(title: "Retry", style: .default){ action in
+                return
+            }
+            alert.addAction(retryAction)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if(segue.identifier == "jobRequested"){
+            print("Single Avail VC to Avail VC User ID sent: \(self.user.userId)")
+            let tab = segue.destination as! UITabBarController
+            let nav = tab.viewControllers?[0] as! UINavigationController
+            let info = nav.viewControllers[0] as! AvailableJobsViewController
+            info.user = self.user
+        }
+    }
 }

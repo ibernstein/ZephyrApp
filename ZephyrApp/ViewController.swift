@@ -37,7 +37,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         loginButton.delegate = self
         if FBSDKAccessToken.current() != nil{
             fetchProfile()
-            sleep(1)
+            sleep(3)
             fetchUserDatabaseInfo()
         }
     }
@@ -114,7 +114,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
         else {
             fetchProfile()
-            sleep(1)
+            sleep(3)
             fetchUserDatabaseInfo()
             print("Successfully logged in")
         }

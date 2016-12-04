@@ -39,15 +39,50 @@ class SingleAvailableJobsViewController: UIViewController{
         priceLabel.text = "$\(job.price)"
         
         //START image stuff
+        print(job.imageURL)
         let url = URL(string: job.imageURL)
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
-        jobImage.image = UIImage(data: data!)
+        
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
+                self.jobImage.image = UIImage(data: data!)
+            }
+        }
         //END image stuff
     }
     
     @IBAction func acceptJobButtonClicked(_ sender: UIButton) {
         //add to user's jobs
-        let newUserJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(job.key)")
-        newUserJobRef.setValue(job.toAnyObject())
+        let jobAcceptRef = self.ref.child("Jobs").child("\(self.job.key)")
+        if(self.user.isDroneOperator){
+            jobAcceptRef.child("DroneOperator").setValue(self.user.userId)
+            print("isDroneOperator accepting job: \(self.user.userId)")
+            jobAcceptRef.child("JobStatus").setValue("Drone Aquired")
+            job.droneOperator = self.user.userId
+            job.jobStatus = "Drone Aquired"
+            let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
+            userJobRef.setValue(job.toAnyObject())
+            self.performSegue(withIdentifier: "acceptingJobSegue", sender: nil)
+        }
+        else if(self.user.isEditor){
+            jobAcceptRef.child("VideoEditor").setValue(self.user.userId)
+            jobAcceptRef.child("JobStatus").setValue("Editor Aquired")
+            job.videoEditor = self.user.userId
+            job.jobStatus = "Editor Aquired"
+            let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
+            userJobRef.setValue(job.toAnyObject())
+            self.performSegue(withIdentifier: "acceptingJobSegue", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if(segue.identifier == "acceptingJobSegue"){
+            print("Single Avail VC to Avail VC User ID sent: \(self.user.userId)")
+            let tab = segue.destination as! UITabBarController
+            let nav = tab.viewControllers?[0] as! UINavigationController
+            let info = nav.viewControllers[0] as! AvailableJobsViewController
+            info.user = self.user
+        }
     }
 }

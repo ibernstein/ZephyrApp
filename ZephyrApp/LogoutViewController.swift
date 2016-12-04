@@ -24,19 +24,6 @@ class LogoutViewController: UIViewController, FBSDKLoginButtonDelegate{
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x:16, y:view.frame.height/2, width: view.frame.width-32, height:50)
         loginButton.delegate = self
-        
-        
-        
-        // unsure if this is correct
-        //facebookButton.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        //if (FBSDKAccessToken.current() != nil && loggedIn == true)
-        if FBSDKAccessToken.current() != nil {
-            //performSegue(withIdentifier: "loginSegue", sender: self)
-        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
