@@ -81,21 +81,41 @@ class SingleMyJobsViewController: UIViewController {
     }
     
     @IBAction func completeJob(_ sender: Any) {
+        
         let jobCompleteRef = self.ref.child("Jobs").child("\(self.job.key)")
+        
         if(self.user.isDroneOperator){
             jobCompleteRef.child("JobStatus").setValue("Needs Editor")
             job.jobStatus = "Needs Editor"
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
             userJobRef.setValue(job.toAnyObject())
+            
+            let propertyManagerID = job.propertyManager
+            let userRef = ref.child("Users").child(propertyManagerID)
+            userRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Needs Editor")
+            
         }
         else if(self.user.isEditor){
+            //Change job status in Jobs branch
             jobCompleteRef.child("JobStatus").setValue("Completed!")
+            //get User ID of Drone operator; Change job status in DroneOperator's Branch
+            let propertyManagerID = job.propertyManager
+            let propertyManagerRef = ref.child("Users").child(propertyManagerID)
+            propertyManagerRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
+            
+            let droneOperatorID = job.droneOperator
+            let droneOperatorRef = ref.child("Users").child(droneOperatorID)
+             droneOperatorRef.child("Jobs").child("\(droneOperatorID)").child("JobStatus").setValue("Completed!")
+            print("After User Ref: ")
+            droneOperatorRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
+            print("After Change Drone job status")
             job.jobStatus = "Completed!"
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
+            
             userJobRef.setValue(job.toAnyObject())
         }
     }
-    @IBAction func giveUpJob(_ sender: Any) {
+    @IBAction func giveUpSingleJob(_ sender: UIButton) {
         let jobCompleteRef = self.ref.child("Jobs").child("\(self.job.key)")
         if(self.user.isDroneOperator){
             jobCompleteRef.child("DroneOperator").setValue("Not Found")
@@ -115,7 +135,9 @@ class SingleMyJobsViewController: UIViewController {
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
             userJobRef.removeValue()
             jobCompleteRef.removeValue()
-        }
+        
+    }
+
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if(segue.identifier == "completeJobSegue"){

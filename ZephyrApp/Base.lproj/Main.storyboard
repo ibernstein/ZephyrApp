@@ -549,6 +549,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Give Up"/>
                                 <connections>
+                                    <action selector="giveUpSingleJob:" destination="Coh-WE-dIR" eventType="touchUpInside" id="mWC-AR-U85"/>
                                     <segue destination="caI-JO-dHi" kind="presentation" identifier="completeJobSegue" id="IyM-Jx-7FM"/>
                                 </connections>
                             </button>
