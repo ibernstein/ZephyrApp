@@ -138,10 +138,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2016-11-20 at 4.08.13 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="Exr-JB-xD2">
-                                <rect key="frame" x="67" y="179" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LC-Jn-Bg6">
                                 <rect key="frame" x="23" y="71" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -156,6 +152,10 @@
                                     <segue destination="5mn-a0-1TB" kind="show" identifier="userInfo" id="zEe-GX-pgt"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZephyrLogoCrisp.png" translatesAutoresizingMaskIntoConstraints="NO" id="Exr-JB-xD2">
+                                <rect key="frame" x="11" y="170" width="350" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -164,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="151.57421289355324"/>
         </scene>
-        <!--Jobs-->
+        <!--Available Jobs-->
         <scene sceneID="5oH-L1-HeR">
             <objects>
                 <navigationController id="slR-d9-5rX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Jobs" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="sGB-eO-k0M"/>
+                    <tabBarItem key="tabBarItem" title="Available Jobs" image="treehouse-25.png" selectedImage="treehouse_filled-25.png" id="sGB-eO-k0M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EIC-Rn-V7W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -415,11 +415,11 @@
             </objects>
             <point key="canvasLocation" x="2642" y="-543"/>
         </scene>
-        <!--home-->
+        <!--My Jobs-->
         <scene sceneID="R8E-fT-0nU">
             <objects>
                 <navigationController id="hpz-ij-gNZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="9ST-T3-8Lx"/>
+                    <tabBarItem key="tabBarItem" title="My Jobs" image="briefcase-25.png" selectedImage="briefcase_filled-25.png" id="9ST-T3-8Lx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7OE-XL-04r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -819,14 +819,15 @@
     </scenes>
     <resources>
         <image name="Screen Shot 2016-11-20 at 4.08.13 PM.png" width="480" height="179"/>
+        <image name="ZephyrLogoCrisp.png" width="3498" height="2242"/>
         <image name="briefcase-25.png" width="25" height="25"/>
         <image name="briefcase_filled-25.png" width="25" height="25"/>
         <image name="treehouse-25.png" width="25" height="25"/>
         <image name="treehouse_filled-25.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jbW-Rg-nvk"/>
-        <segue reference="q2l-oy-cTX"/>
         <segue reference="oxB-hj-jVo"/>
+        <segue reference="fCX-EU-4rL"/>
+        <segue reference="q2l-oy-cTX"/>
     </inferredMetricsTieBreakers>
 </document>

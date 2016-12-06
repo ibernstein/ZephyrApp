@@ -26,6 +26,7 @@
 		93F8F3DE1DD4DD2100529892 /* treehouse-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DD1DD4DD2100529892 /* treehouse-25.png */; };
 		93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3DF1DD4DDC400529892 /* briefcase-25.png */; };
 		93F8F3E21DD4DDCC00529892 /* briefcase_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */; };
+		EA2283421DF77D2C00F8E75F /* ZephyrLogoCrisp.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2283411DF77D2C00F8E75F /* ZephyrLogoCrisp.png */; };
 		EA5A61CC1DEFDF2D0045A252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA5A61CB1DEFDF2D0045A252 /* GoogleService-Info.plist */; };
 		EA5A61CE1DEFEE940045A252 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A61CD1DEFEE940045A252 /* Job.swift */; };
 		EA73E7771DF22F87005143D1 /* RequestJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA73E7761DF22F87005143D1 /* RequestJobViewController.swift */; };
@@ -63,6 +64,7 @@
 		93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "briefcase_filled-25.png"; sourceTree = SOURCE_ROOT; };
 		D0A794FEB3171558D94A44E8 /* Pods-ZephyrApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZephyrApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZephyrApp/Pods-ZephyrApp.release.xcconfig"; sourceTree = "<group>"; };
 		EA2255641DDB9B4A0054A896 /* ZephyrApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZephyrApp.entitlements; sourceTree = "<group>"; };
+		EA2283411DF77D2C00F8E75F /* ZephyrLogoCrisp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZephyrLogoCrisp.png; sourceTree = "<group>"; };
 		EA5A61CB1DEFDF2D0045A252 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA5A61CD1DEFEE940045A252 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		EA73E7761DF22F87005143D1 /* RequestJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestJobViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				93C7549A1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png */,
+				EA2283411DF77D2C00F8E75F /* ZephyrLogoCrisp.png */,
 				EA2255641DDB9B4A0054A896 /* ZephyrApp.entitlements */,
 				93F8F3DB1DD4DD1B00529892 /* treehouse_filled-25.png */,
 				93F8F3E11DD4DDCC00529892 /* briefcase_filled-25.png */,
@@ -247,6 +250,7 @@
 				93F8F3B81DD3DE2000529892 /* LaunchScreen.storyboard in Resources */,
 				EA5A61CC1DEFDF2D0045A252 /* GoogleService-Info.plist in Resources */,
 				93F8F3DC1DD4DD1B00529892 /* treehouse_filled-25.png in Resources */,
+				EA2283421DF77D2C00F8E75F /* ZephyrLogoCrisp.png in Resources */,
 				93C7549B1DE2568D00BB094D /* Screen Shot 2016-11-20 at 4.08.13 PM.png in Resources */,
 				93F8F3E01DD4DDC400529892 /* briefcase-25.png in Resources */,
 				93F8F3B51DD3DE2000529892 /* Assets.xcassets in Resources */,
