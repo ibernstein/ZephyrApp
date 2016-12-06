@@ -83,7 +83,7 @@ class SingleMyJobsViewController: UIViewController {
     @IBAction func completeJob(_ sender: Any) {
         
         let jobCompleteRef = self.ref.child("Jobs").child("\(self.job.key)")
-        
+        //User is a Drone Operator
         if(self.user.isDroneOperator){
             jobCompleteRef.child("JobStatus").setValue("Needs Editor")
             job.jobStatus = "Needs Editor"
@@ -95,6 +95,7 @@ class SingleMyJobsViewController: UIViewController {
             userRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Needs Editor")
             
         }
+        //User is a Editor
         else if(self.user.isEditor){
             //Change job status in Jobs branch
             jobCompleteRef.child("JobStatus").setValue("Completed!")
@@ -105,7 +106,7 @@ class SingleMyJobsViewController: UIViewController {
             
             let droneOperatorID = job.droneOperator
             let droneOperatorRef = ref.child("Users").child(droneOperatorID)
-             droneOperatorRef.child("Jobs").child("\(droneOperatorID)").child("JobStatus").setValue("Completed!")
+            droneOperatorRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
             print("After User Ref: ")
             droneOperatorRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
             print("After Change Drone job status")
@@ -117,6 +118,7 @@ class SingleMyJobsViewController: UIViewController {
     }
     @IBAction func giveUpSingleJob(_ sender: UIButton) {
         let jobCompleteRef = self.ref.child("Jobs").child("\(self.job.key)")
+        //User is a Drone Operator
         if(self.user.isDroneOperator){
             jobCompleteRef.child("DroneOperator").setValue("Not Found")
             jobCompleteRef.child("JobStatus").setValue("Needs Drone")
@@ -124,6 +126,7 @@ class SingleMyJobsViewController: UIViewController {
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
             userJobRef.removeValue()
         }
+        //User is an Editor
         else if(self.user.isEditor){
             jobCompleteRef.child("VideoEditor").setValue("Not Found")
             jobCompleteRef.child("JobStatus").setValue("Needs Editor")
@@ -131,6 +134,7 @@ class SingleMyJobsViewController: UIViewController {
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
             userJobRef.removeValue()
         }
+        //User is a Property Manager
         else if(self.user.isPropertyManager){
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
             userJobRef.removeValue()
