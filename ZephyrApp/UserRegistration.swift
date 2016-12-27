@@ -2,13 +2,11 @@
 //  UserRegistration.swift
 //  ZephyrApp
 //
-//  Created by Tony Bumatay on 12/3/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
-//
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 12/3/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.//
 import Foundation
 import UIKit
 import Firebase
-//import FBSDKCoreKit
 import FBSDKLoginKit
 
 
@@ -21,21 +19,15 @@ class UserRegistration: UIViewController{
     @IBOutlet weak var isPropertyManager: UISwitch!
     @IBOutlet weak var isVideoEditor: UISwitch!
     
-    @IBAction func registerUserType(_ sender: Any) {
-        print("User Registration user.Id as self: \(self.user.userId)")
-        let newUsersRef = FIRDatabase.database().reference().child("Users").child(self.user.userId)
-        newUsersRef.setValue(self.user.toAnyObject())
-        self.performSegue(withIdentifier: "loginFromRegSegue", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if(segue.identifier == "loginFromRegSegue"){
-            print("User Registration's User ID: \(self.user.userId)")
-            let tab = segue.destination as! UITabBarController
-            let nav = tab.viewControllers?[0] as! UINavigationController
-            let info = nav.viewControllers[0] as! AvailableJobsViewController
-            info.user = self.user
-        }
+    //Set initial values. Users are only allowed to select one of the three options (Drone Operator, Property Manager, or Video Editor)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        isDroneOperator.isOn = true
+        isPropertyManager.isOn = false
+        isVideoEditor.isOn = false
+        self.user.isDroneOperator = true
+        self.user.isPropertyManager = false
+        self.user.isEditor = false
     }
     
     @IBAction func droneAction(_ sender: Any) {
@@ -64,13 +56,20 @@ class UserRegistration: UIViewController{
         self.user.isEditor = false
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        isDroneOperator.isOn = true
-        isPropertyManager.isOn = false
-        isVideoEditor.isOn = false
-        self.user.isDroneOperator = true
-        self.user.isPropertyManager = false
-        self.user.isEditor = false
+    @IBAction func registerUserType(_ sender: Any) {
+        let newUsersRef = FIRDatabase.database().reference().child("Users").child(self.user.userId)
+        newUsersRef.setValue(self.user.toAnyObject())
+        self.performSegue(withIdentifier: "loginFromRegSegue", sender: nil)
     }
+    
+    //Segue to Available Jobs View Controller and pass user's data
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if(segue.identifier == "loginFromRegSegue"){
+            let tab = segue.destination as! UITabBarController
+            let nav = tab.viewControllers?[0] as! UINavigationController
+            let info = nav.viewControllers[0] as! AvailableJobsViewController
+            info.user = self.user
+        }
+    }
+    
 }

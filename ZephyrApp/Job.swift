@@ -2,9 +2,8 @@
 //  Job.swift
 //  ZephyrApp
 //
-//  Created by Tony Bumatay on 11/30/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
-//
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 11/30/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.//
 
 import Foundation
 import UIKit
@@ -29,6 +28,7 @@ struct Job {
     var videoEditor: String
     let ref: FIRDatabaseReference?
     
+    //initialize generic null Job
     init(){
         self.key = ""
         self.city = ""
@@ -50,6 +50,7 @@ struct Job {
 
     }
     
+    //initialize Job object with explicit values
     init(city: String, date: String, indoor: Bool, outdoor: Bool, jobStatus: String, price: Double, squareFt: Double, state: String, streetAddress: String, time: String, zipCode: String, imageURL: String, droneOperator: String, propertyManager: String, videoEditor: String, key: String = ""){
         self.key = key
         self.city = city
@@ -70,6 +71,7 @@ struct Job {
         self.ref = nil
     }
     
+    //initialize Job object with Firebase snapshot
     init(snapshot: FIRDataSnapshot){
         key = snapshot.key
         let snapshotValue = snapshot.value as! [String:AnyObject]

@@ -2,13 +2,11 @@
 //  ViewController.swift
 //  ZephyrApp
 //
-//  Created by Hannah Mehrle on 11/9/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
-//
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 11/9/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.//
 
 import UIKit
 import Firebase
-//import FBSDKCoreKit
 import FBSDKLoginKit
 
 

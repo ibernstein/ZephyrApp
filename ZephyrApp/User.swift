@@ -2,8 +2,8 @@
 //  User.swift
 //  ZephyrApp
 //
-//  Created by Tony Bumatay on 12/3/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 12/3/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.
 //
 
 import Foundation
@@ -22,6 +22,7 @@ struct User {
     var userJobs: [Job]
     var ref: FIRDatabaseReference?
     
+    //initialize generic null User
     init(){
         self.key = ""
         self.userId = ""
@@ -35,6 +36,7 @@ struct User {
         self.ref = nil
     }
     
+    //initialize User object with explicit values
     init(userId: String, firstName: String, lastName: String, email: String, isDroneOperator: Bool, isEditor: Bool, isPropertyManager: Bool, userJobs: [Job], key: String = ""){
         self.key = key
         self.userId = userId
@@ -48,6 +50,7 @@ struct User {
         self.ref = nil
     }
     
+    //initialize User object with Firebase snapshot
     init(snapshot: FIRDataSnapshot){
         key = snapshot.key
         let snapshotValue = snapshot.value as! [String:AnyObject]

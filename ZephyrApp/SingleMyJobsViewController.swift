@@ -2,8 +2,8 @@
 //  SingleMyJobsViewController.swift
 //  ZephyrApp
 //
-//  Created by Hannah Mehrle on 11/17/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 11/17/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.
 //
 
 import Foundation
@@ -26,7 +26,6 @@ class SingleMyJobsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var jobImage: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
-    
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var giveUpJobButton: UIButton!
     
@@ -36,17 +35,20 @@ class SingleMyJobsViewController: UIViewController {
     override func viewDidLoad() {
         completeButton.isHidden = true
         giveUpJobButton.isHidden = true
+        //User is a PropertyManager
         if(self.user.isPropertyManager){
             if self.job.jobStatus == "Needs Drone" && self.user.userId == self.job.propertyManager{
                 giveUpJobButton.isHidden = false
             }
         }
+        //User is a DroneOperator
         if(self.user.isDroneOperator){
             if self.job.jobStatus == "Drone Aquired" && self.user.userId == self.job.droneOperator {
                 completeButton.isHidden = false
                 giveUpJobButton.isHidden = false
             }
         }
+        //User is an Editor
         if(self.user.isEditor){
             if self.job.jobStatus == "Editor Aquired" && self.user.userId == self.job.videoEditor{
                 completeButton.isHidden = false
@@ -65,23 +67,18 @@ class SingleMyJobsViewController: UIViewController {
         priceLabel.text = "$\(job.price)"
         addressLabel.text = job.streetAddress
         nameLabel.text = "Job Status: \(job.jobStatus)" //actually displays job Status, not name
-        
-        //START image stuff
-        print(job.imageURL)
         let url = URL(string: job.imageURL)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
-                //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
                 self.jobImage.image = UIImage(data: data!)
             }
         }
-        //END image stuff
         
     }
     
+    //The job's status should be updated and values for associated users should be updated accordingly (i.e. drone operator completes job: status goes from "Drone Acquired" --> "Needs Editor")
     @IBAction func completeJob(_ sender: Any) {
-        
         let jobCompleteRef = self.ref.child("Jobs").child("\(self.job.key)")
         //User is a Drone Operator
         if(self.user.isDroneOperator){
@@ -97,25 +94,25 @@ class SingleMyJobsViewController: UIViewController {
         }
         //User is a Editor
         else if(self.user.isEditor){
-            //Change job status in Jobs branch
+            //Change job status in Jobs branch in Firebase
             jobCompleteRef.child("JobStatus").setValue("Completed!")
-            //get User ID of Drone operator; Change job status in DroneOperator's Branch
+            //get User ID of propertyManager; Change job status in propertyManager's Job Branch in Firebase
             let propertyManagerID = job.propertyManager
             let propertyManagerRef = ref.child("Users").child(propertyManagerID)
             propertyManagerRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
             
+            //get User ID of droneOperator; Change job status in droneOperator's Job Branch in Firebase
             let droneOperatorID = job.droneOperator
             let droneOperatorRef = ref.child("Users").child(droneOperatorID)
             droneOperatorRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
-            print("After User Ref: ")
             droneOperatorRef.child("Jobs").child("\(self.job.key)").child("JobStatus").setValue("Completed!")
-            print("After Change Drone job status")
             job.jobStatus = "Completed!"
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
-            
             userJobRef.setValue(job.toAnyObject())
         }
     }
+    
+    //User gives up a job from their "MyJobs" list. The job's status should be updated and values for associated users should be updated accordingly (i.e. drone operator no longer associated with job if he gives up the job)
     @IBAction func giveUpSingleJob(_ sender: UIButton) {
         let jobCompleteRef = self.ref.child("Jobs").child("\(self.job.key)")
         //User is a Drone Operator
@@ -139,20 +136,18 @@ class SingleMyJobsViewController: UIViewController {
             let userJobRef = self.ref.child("Users").child("\(self.user.userId)").child("Jobs").child("\(self.job.key)")
             userJobRef.removeValue()
             jobCompleteRef.removeValue()
-        
+        }
     }
-
-    }
+    
+    //Prepare to segue on Complete Job action or Give up Job action
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if(segue.identifier == "completeJobSegue"){
-            print("Single Avail VC to Avail VC User ID sent: \(self.user.userId)")
             let tab = segue.destination as! UITabBarController
             let nav = tab.viewControllers?[0] as! UINavigationController
             let info = nav.viewControllers[0] as! AvailableJobsViewController
             info.user = self.user
         }
         if(segue.identifier == "GiveUpJobSegue"){
-            print("Single Avail VC to Avail VC User ID sent: \(self.user.userId)")
             let tab = segue.destination as! UITabBarController
             let nav = tab.viewControllers?[0] as! UINavigationController
             let info = nav.viewControllers[0] as! AvailableJobsViewController

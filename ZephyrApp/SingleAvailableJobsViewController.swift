@@ -2,8 +2,8 @@
 //  SingleAvailableJobsViewController.swift
 //  ZephyrApp
 //
-//  Created by Hannah Mehrle on 11/16/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 11/16/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.
 //
 
 import Foundation
@@ -13,7 +13,6 @@ import Firebase
 class SingleAvailableJobsViewController: UIViewController{
    
     var ref = FIRDatabase.database().reference()
-    
     var job = Job()
     var user = User()
     
@@ -38,27 +37,20 @@ class SingleAvailableJobsViewController: UIViewController{
         timeLabel.text = job.time
         priceLabel.text = "$\(job.price)"
         nameLabel.text = "Job Status: \(job.jobStatus)" //actually displays job Status, not name
-        
-        //START image stuff
-        print(job.imageURL)
         let url = URL(string: job.imageURL)
-        
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
-                //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
                 self.jobImage.image = UIImage(data: data!)
             }
         }
-        //END image stuff
     }
     
     @IBAction func acceptJobButtonClicked(_ sender: UIButton) {
-        //add to user's jobs
+        //add selected Job to user's MyJobs
         let jobAcceptRef = self.ref.child("Jobs").child("\(self.job.key)")
         if(self.user.isDroneOperator){
             jobAcceptRef.child("DroneOperator").setValue(self.user.userId)
-            print("isDroneOperator accepting job: \(self.user.userId)")
             jobAcceptRef.child("JobStatus").setValue("Drone Aquired")
             job.droneOperator = self.user.userId
             job.jobStatus = "Drone Aquired"
@@ -77,9 +69,9 @@ class SingleAvailableJobsViewController: UIViewController{
         }
     }
     
+    //Prepare segue back to AvailableJobsVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if(segue.identifier == "acceptingJobSegue"){
-            print("Single Avail VC to Avail VC User ID sent: \(self.user.userId)")
             let tab = segue.destination as! UITabBarController
             let nav = tab.viewControllers?[0] as! UINavigationController
             let info = nav.viewControllers[0] as! AvailableJobsViewController

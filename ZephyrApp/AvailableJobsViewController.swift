@@ -2,8 +2,8 @@
 //  AvailableJobsViewController.swift
 //  ZephyrApp
 //
-//  Created by Hannah Mehrle on 11/16/16.
-//  Copyright © 2016 Hannah Mehrle. All rights reserved.
+//  Created by Tony Bumatay, Hannah Mehrle, and Ian Bernstein on 11/16/16.
+//  Copyright © 2016 Tony Bumatay. All rights reserved.
 //
 
 import Foundation
@@ -29,7 +29,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    //Every time something changes, it calls fetchDataForTableView
+    //Allows for real-time updates
     override func viewWillAppear(_ animated: Bool) {
         fetchDataForTableView()
     }
@@ -43,8 +43,17 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         view.addSubview(tableView)
     }
     
+    //Create tableView based on size of allJobs
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allJobs.count
+    }
+    
+    //Explicitly set height of all tableView cells
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200.0
+    }
   
-    //Auto Reupdates information in the allJobs variable for the table
+    //Real time updates of allJobs variable for the table
     func fetchDataForTableView(){
         allJobs.removeAll()
         let databaseRef = self.ref
@@ -61,7 +70,7 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
                     }
                 }
                 if tempUser.isPropertyManager {
-                    //Create a message for user
+                    //Property managers have a blank AvailableJobsVC page
                 }
                 if tempUser.isEditor {
                     if(tempJob.jobStatus == "Needs Editor") {
@@ -72,6 +81,34 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
             self.allJobs = availJobs
             self.tableView.reloadData()
         })
+    }
+
+    //Populate tableView cell with Job data
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.textLabel!.text = "\(allJobs[indexPath.row].city), \(allJobs[indexPath.row].state) \(allJobs[indexPath.row].zipCode)"
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.detailTextLabel!.text = "\(allJobs[indexPath.row].date) \(allJobs[indexPath.row].time)\n Job Status: \(allJobs[indexPath.row].jobStatus)"
+        
+        //Start load image to cell
+        let url = URL(string: allJobs[indexPath.row].imageURL)
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
+        let tempImage = UIImage(data: data!)
+        let size = CGSize(width: 130, height: 90)
+        let rect = CGRect(x: 0, y: 0, width: CGFloat(size.width), height: CGFloat(size.height))
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        tempImage?.draw(in: rect)
+        cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //End load image to cell
+        
+        return cell
+    }
+    
+    //When cell is touched, perform segue to SingleAvailableJobsVC
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "SingleAvailView", sender: indexPath)
     }
     
     //Triggering segues
@@ -88,45 +125,6 @@ class AvailableJobsViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    //Change height of table view cells
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
-    }
-    
-    //Create tabel view based on size of allJobs
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allJobs.count
-    }
-    
-    //Modify what shows in each table view cell
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel!.text = "\(allJobs[indexPath.row].city), \(allJobs[indexPath.row].state) \(allJobs[indexPath.row].zipCode)"
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.detailTextLabel!.text = "\(allJobs[indexPath.row].date) \(allJobs[indexPath.row].time)\n Job Status: \(allJobs[indexPath.row].jobStatus)"
-        
-        //START image stuff
-        let url = URL(string: allJobs[indexPath.row].imageURL)
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catcht
-        let tempImage = UIImage(data: data!)
-        let size = CGSize(width: 130, height: 90)
-        let rect = CGRect(x: 0, y: 0, width: CGFloat(size.width), height: CGFloat(size.height))
-        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
-        tempImage?.draw(in: rect)
-        cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        //END image stuff
-        
-        return cell
-    }
-    
-    //When cell is touched, perform segue
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "SingleAvailView", sender: indexPath)
-    }
-    
-    //unkown purpose?
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
